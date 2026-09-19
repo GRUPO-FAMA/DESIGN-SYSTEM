@@ -1,0 +1,24 @@
+<!-- @dsCard group="Components" viewport="700x520" name="Surfaces" subtitle="Photo · ModelCard · Quote · Band · Card · Badge · Tag" -->
+<!DOCTYPE html><html lang="es"><head><meta charset="utf-8"><link rel="stylesheet" href="../../styles.css"><style>body{padding:24px;min-height:520px}.g{display:flex;flex-wrap:wrap;gap:16px;align-items:center}.col{display:flex;flex-direction:column;gap:24px}</style>
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script src="../../_ds_bundle.js"></script><script>window.FAMA_ASSETS_BASE='../../assets'</script></head><body><div id="root"></div>
+<script type="text/babel">
+const DS=window.FAMAAcademyDesignSystem_4e70e5;
+const {Photo,ModelCard,Quote,Band,Card,Badge,Tag,Button,Label}=DS;
+const M='https://famaacademy.es/wp-content/uploads/2024/11/home-modelo-fama-';
+function Demo(){const [sel,setSel]=React.useState('Madrid');
+return <div className="col">
+  <Band padded={false} style={{padding:20,display:'flex',gap:16,overflow:'hidden'}}>
+    <ModelCard name="Adriana C" image={M+'adriana-fama-academy.webp'} href="#" style={{width:150}}/><ModelCard name="Alba R" image={M+'alba-fama-academy.webp'} href="#" style={{width:150}}/><ModelCard name="Artur S" image={M+'artur-fama-academy.webp'} href="#" style={{width:150}}/>
+    <div style={{marginLeft:'auto',alignSelf:'flex-end',display:'flex',flexDirection:'column',gap:16,alignItems:'flex-end'}}><Label muted>Band · inverts children</Label><Button variant="solid" size="sm">Ver todos</Button></div>
+  </Band>
+  <div style={{display:'grid',gridTemplateColumns:'1fr 2fr',gap:24,alignItems:'start'}}>
+    <Photo src="https://famaacademy.es/wp-content/uploads/2026/08/curso-verano-modelo-683x1024.webp" ratio="3 / 4" alt="Intensivos de verano"/>
+    <div className="col"><Quote author="Valentina" role="Alumna" date="14/09/2026">La transformación es real: pasar de ser alguien tímida y, al pasar los días, sentirme segura de mí y de mi potencial.</Quote>
+    <div className="g"><Card variant="outline" eyebrow="Admisiones" title="Requisitos" style={{flex:1}}>14 – 24 años · Sin experiencia previa</Card></div>
+    <div className="g"><Badge>Nuevo</Badge><Badge variant="outline">Plazas limitadas</Badge>{['Madrid','Barcelona','Online'].map(c=><Tag key={c} selected={sel===c} onClick={()=>setSel(c)}>{c}</Tag>)}</div></div>
+  </div>
+</div>;}ReactDOM.createRoot(document.getElementById('root')).render(<Demo/>);
+</script></body></html>

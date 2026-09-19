@@ -1,0 +1,29 @@
+<!-- @dsCard group="Components" viewport="900x900" name="Web patterns" subtitle="SectionHead · Kpis · ScheduleRow · Rating · Testimonial · Faq · HairlineList · StatementClose · SiteNav · SiteFooter" -->
+<!DOCTYPE html><html lang="es"><head><meta charset="utf-8"><link rel="stylesheet" href="../../styles.css"><style>body{margin:0;--page-margin:32px;--section-gap:48px}.s{padding:32px}.col{display:grid;gap:32px}</style>
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script src="../../_ds_bundle.js"></script><script>window.FAMA_ASSETS_BASE='../../assets'</script></head><body><div id="root"></div>
+<script type="text/babel">
+const DS=window.FAMAAcademyDesignSystem_4e70e5||{};
+const need=['SiteNav','SectionHead','Kpis','ScheduleRow','Testimonial','Faq','HairlineList','StatementClose','SiteFooter'];
+const missing=need.filter(n=>!DS[n]);
+if(missing.length){document.getElementById('root').innerHTML='<p style="padding:32px;font:14px/1.5 Roboto,system-ui,sans-serif;color:#4A4A4A">Bundle sin compilar todavía: faltan '+missing.join(', ')+'. Recarga tras el siguiente turno.</p>';}
+else{
+const {SiteNav,SectionHead,Kpis,ScheduleRow,Testimonial,Faq,HairlineList,StatementClose,SiteFooter}=DS;
+function Demo(){return <div>
+  <SiteNav fixed={false} solid cta={{label:'Solicitar plaza',href:'#'}}/>
+  <div className="s col">
+    <SectionHead num="01" title="Testimonios" label="Alumnos"/>
+    <SectionHead num="02" title="Método FAMA" label="Tres fases"/>
+    <Kpis items={[{value:'3',label:'meses'},{value:'0',label:'experiencia previa'},{value:'100%',label:'presencial'}]}/>
+    <div><ScheduleRow day="Viernes tarde" time="16:30 – 20:30" dates="25 sep – 11 dic" places={5} href="#"/><ScheduleRow day="Sábados mañana" time="10:00 – 14:00" dates="26 sep – 12 dic" soldOut/></div>
+    <Testimonial items={[{text:'La transformación es real: pasar de ser alguien tímida y, al pasar los días, sentirme segura de mí y de mi potencial.',author:'Valentina',role:'Alumna',date:'14/09/2026'},{text:'Mi hija ha salido encantada. Las profesoras son excelentes, el trato es muy cercano y les enseñan muchísimo.',author:'Lucía Jiménez del Prado',role:'Madre de alumna',date:'04/09/2026'}]}/>
+    <Faq items={[{q:'¿Necesito experiencia previa?',a:'No. La mayoría de los alumnos empieza de cero.'},{q:'¿Prometéis trabajo?',a:'No. Las marcas seleccionan; nosotros nos ocupamos de que llegues preparado y te representamos.'}]}/>
+    <HairlineList numbered={false} size="lg" items={['Experiencia','El cuerpo perfecto','Saber posar ni desfilar']}/>
+  </div>
+  <StatementClose label="Da el paso" sub="Te contactamos en menos de 24 horas." primary={{label:'Solicitar plaza',href:'#'}} secondary={{label:'Reservar Openday',href:'#'}}>Las agencias fichan a quien <b>ya llega preparado</b>.</StatementClose>
+  <SiteFooter/>
+</div>;}
+ReactDOM.createRoot(document.getElementById('root')).render(<Demo/>);}
+</script></body></html>
