@@ -1,0 +1,22 @@
+<!-- @dsCard group="Components" viewport="700x420" name="Forms" subtitle="Input · Select · Checkbox · Radio · Switch" -->
+<!DOCTYPE html><html lang="es"><head><meta charset="utf-8"><link rel="stylesheet" href="../../styles.css"><style>body{padding:24px;min-height:420px}.g{display:flex;flex-wrap:wrap;gap:16px;align-items:center}.col{display:flex;flex-direction:column;gap:16px}.cap{font:var(--type-caption);color:var(--fg-muted)}</style>
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script src="../../_ds_bundle.js"></script><script>window.FAMA_ASSETS_BASE='../../assets'</script></head><body><div id="root"></div>
+<script type="text/babel">
+const DS=window.FAMAAcademyDesignSystem_4e70e5;
+const {Input,Select,Checkbox,RadioGroup,Switch,Field}=DS;
+function Demo(){const [city,setCity]=React.useState('');const [sede,setSede]=React.useState('Madrid');const [a,setA]=React.useState(true);const [b,setB]=React.useState(false);const [s,setS]=React.useState(true);
+return <div style={{display:'grid',gridTemplateColumns:'1fr 1fr 1fr',gap:24}}>
+  <Input label="Nombre y apellidos" placeholder="Tu nombre" required/>
+  <Input label="Email" type="email" variant="underline" placeholder="nombre@correo.com" hint="Te enviaremos la confirmación"/>
+  <Input label="Altura (cm)" variant="filled" defaultValue="178" error="Introduce solo números"/>
+  <Select label="Sede" placeholder="Elige ciudad" options={['Madrid','Barcelona']} value={city} onChange={e=>setCity(e.target.value)}/>
+  <Select label="Programa" variant="underline" options={['Pasarela','Fotografía','Desarrollo de carrera']} defaultValue="Pasarela"/>
+  <Input label="Teléfono" size="sm" disabled defaultValue="+34 600 000 000"/>
+  <Field label="Sede preferida"><RadioGroup name="sede" value={sede} onChange={setSede} options={['Madrid','Barcelona']} direction="row"/></Field>
+  <Field label="Condiciones"><div className="col" style={{gap:10}}><Checkbox label="He leído las condiciones" checked={a} onChange={setA}/><Checkbox label="Quiero recibir novedades" checked={b} onChange={setB}/><Checkbox label="Deshabilitado" disabled checked/></div></Field>
+  <Field label="Preferencias"><div className="col" style={{gap:10}}><Switch label="Recibir avisos de casting" checked={s} onChange={setS}/><Switch label="Newsletter" checked={false}/><Switch label="Deshabilitado" disabled/></div></Field>
+</div>;}ReactDOM.createRoot(document.getElementById('root')).render(<Demo/>);
+</script></body></html>
