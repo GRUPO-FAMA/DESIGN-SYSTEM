@@ -1,0 +1,148 @@
+<!DOCTYPE html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>FAMA Academy — Propuesta 2 «Noche»</title><link rel="stylesheet" href="../styles.css">
+<style>
+:root{--m:10vw;--ease:cubic-bezier(.2,.6,.2,1);--line:rgba(255,255,255,.18)}
+body{margin:0;background:#000;color:#fff;font:var(--type-body);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-decoration:none}a:hover{opacity:1}
+.wrap{padding-left:var(--m);padding-right:var(--m)}
+.lbl{font:500 11px/1 var(--font-body);text-transform:uppercase;letter-spacing:.26em}
+.dim{color:#9A9A9A}
+.syne{font-family:var(--font-display-alt);font-weight:800;text-transform:uppercase;letter-spacing:-.05em;line-height:.86;margin:0}
+.light{font-family:var(--font-display);font-weight:200;text-transform:uppercase;letter-spacing:.14em;line-height:1}
+.ph{background:#F1F1F1;position:relative;overflow:hidden}
+.ph span{position:absolute;left:16px;bottom:14px;font:400 11px/1 var(--font-body);letter-spacing:.14em;text-transform:uppercase;color:#9A9A9A}
+/* intro curtain */
+.curtain{position:fixed;inset:0;background:#000;z-index:100;display:grid;place-items:center;transition:transform 1.2s cubic-bezier(.7,0,.2,1);transform:translateY(0)}
+.curtain.up{transform:translateY(-100%)}
+.curtain img{height:40px;opacity:0;animation:fadeIn 1s .2s var(--ease) forwards}
+@keyframes fadeIn{to{opacity:1}}
+/* nav */
+nav{position:fixed;top:0;left:0;right:0;z-index:20;height:80px;display:flex;align-items:center;justify-content:space-between;gap:32px;mix-blend-mode:difference;color:#fff}
+nav a{white-space:nowrap}
+/* hero */
+.hero{height:100vh;min-height:640px;position:relative}
+.hero .ph{position:absolute;inset:0}
+.hero .ph span{left:var(--m);bottom:32px;color:#4A4A4A}
+.masthead{display:grid;grid-template-columns:1fr auto 1fr;gap:24px;align-items:center;padding:28px var(--m);border-bottom:1px solid var(--line)}
+.masthead .lbl:last-child{text-align:right}
+.title{padding:clamp(80px,10vw,160px) var(--m) 0;display:grid;grid-template-columns:auto minmax(0,1fr);gap:clamp(24px,4vw,64px)}
+.vert{writing-mode:vertical-rl;transform:rotate(180deg);align-self:end}
+.title h1{font-size:clamp(56px,9.4vw,180px)}
+.title h1 em{display:block;font:200 clamp(22px,3.2vw,56px)/1.1 var(--font-display);letter-spacing:.24em;font-style:normal;margin-top:clamp(20px,3vw,48px);text-transform:uppercase}
+.title-meta{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:32px;align-items:end;margin-top:clamp(48px,6vw,96px)}
+.title-meta p{font:var(--type-lead);color:#F1F1F1;max-width:38ch;margin:0}
+/* ticker */
+.ticker{margin-top:clamp(80px,10vw,160px);border-top:1px solid var(--line);border-bottom:1px solid var(--line);overflow:hidden;white-space:nowrap;padding:22px 0}
+.ticker div{display:inline-block;animation:run 40s linear infinite}
+.ticker span{font:200 clamp(22px,2.6vw,40px)/1 var(--font-display);text-transform:uppercase;letter-spacing:.18em;padding:0 40px}
+.ticker span b{font-weight:800;font-family:var(--font-display-alt);letter-spacing:-.03em}
+@keyframes run{to{transform:translateX(-50%)}}
+/* lookbook */
+.look{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(32px,5vw,96px);padding:clamp(96px,12vw,200px) var(--m) 0;align-items:start}
+.look .sticky{position:sticky;top:120px}
+.look .num{font:200 12px/1 var(--font-body);letter-spacing:.3em}
+.look h2{font-size:clamp(32px,4.2vw,80px);margin-top:32px;overflow-wrap:anywhere}
+.look h2 small{display:block;font:200 clamp(18px,2vw,28px)/1 var(--font-display);letter-spacing:.22em;margin-top:20px}
+.look dl{display:grid;grid-template-columns:auto 1fr;gap:12px 32px;margin:48px 0 0;font:var(--type-small);color:#F1F1F1}
+.look dt{font:500 11px/1.6 var(--font-body);letter-spacing:.26em;text-transform:uppercase;color:#9A9A9A}.look dd{margin:0}
+.look .btn{margin-top:48px}
+.look .col{display:flex;flex-direction:column;gap:clamp(24px,4vw,64px)}
+.look .ph{aspect-ratio:4/5}
+.look .ph.off{width:70%;align-self:flex-end}
+.look+.look{padding-top:clamp(96px,12vw,200px)}
+/* white break */
+.white{background:#fff;color:#000;margin-top:clamp(96px,12vw,200px)}
+.date{padding:clamp(96px,12vw,200px) var(--m);display:grid;grid-template-columns:minmax(0,1fr);gap:0}
+.date .big{font-size:clamp(80px,20vw,360px);letter-spacing:-.07em;line-height:.8}
+.date .row{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:48px;align-items:end;margin-top:clamp(40px,5vw,80px);padding-top:32px;border-top:1px solid #000}
+.date h2{font-size:clamp(40px,5.5vw,96px)}
+.date dl{display:grid;grid-template-columns:auto 1fr;gap:12px 32px;margin:0;font:var(--type-small)}
+.date dt{font:500 11px/1.6 var(--font-body);letter-spacing:.26em;text-transform:uppercase;color:#4A4A4A}.date dd{margin:0}
+.btn{display:inline-flex;align-items:center;justify-content:center;height:60px;padding:0 44px;font:500 11px/1 var(--font-body);text-transform:uppercase;letter-spacing:.28em;border:1px solid currentColor;transition:background .5s var(--ease),color .5s var(--ease);white-space:nowrap}
+.btn.solid{background:#fff;color:#000;border-color:#fff}.btn.solid:hover{background:transparent;color:#fff}
+.white .btn.solid{background:#000;color:#fff;border-color:#000}.white .btn.solid:hover{background:transparent;color:#000}
+/* manifesto */
+.mani{padding:clamp(96px,12vw,200px) var(--m);display:grid;grid-template-columns:minmax(0,2fr) minmax(0,10fr);gap:40px}
+.mani p{font:200 clamp(30px,4.6vw,84px)/1.05 var(--font-display);text-transform:uppercase;letter-spacing:-.01em;margin:0;max-width:16ch}
+.mani p b{font-family:var(--font-display-alt);font-weight:800;letter-spacing:-.05em}
+/* sedes strip */
+.strip{padding:0 0 clamp(96px,12vw,200px)}
+.strip .head{padding:0 var(--m) 40px;display:flex;justify-content:space-between;align-items:baseline;gap:24px}
+.strip .head h2{font-size:clamp(40px,5.5vw,96px)}
+.rail{display:flex;gap:clamp(16px,2vw,32px);overflow-x:auto;scroll-snap-type:x mandatory;padding:0 var(--m);scrollbar-width:none}
+.rail::-webkit-scrollbar{display:none}
+.rail figure{flex:0 0 min(72vw,520px);margin:0;scroll-snap-align:start}
+.rail .ph{aspect-ratio:3/4}
+.rail figcaption{display:flex;justify-content:space-between;align-items:baseline;margin-top:20px;gap:16px}
+.rail figcaption h3{font-family:var(--font-display-alt);font-weight:800;text-transform:uppercase;letter-spacing:-.04em;font-size:clamp(24px,2.6vw,40px);margin:0}
+/* footer */
+footer{padding:clamp(96px,12vw,200px) var(--m) 40px;display:grid;grid-template-columns:minmax(0,1fr);gap:clamp(64px,8vw,120px)}
+footer .mark{display:grid;place-items:center}
+footer .mark img{width:min(52vw,560px)}
+footer .cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:32px;border-top:1px solid var(--line);padding-top:48px}
+footer ul{list-style:none;margin:20px 0 0;padding:0;display:flex;flex-direction:column;gap:12px;font:var(--type-small);color:#F1F1F1}
+footer .bottom{display:flex;justify-content:space-between;gap:24px;border-top:1px solid var(--line);padding-top:24px;font:var(--type-caption);color:#9A9A9A;flex-wrap:wrap}
+/* reveal */
+.r{opacity:0;transform:translateY(32px);transition:opacity 1.3s var(--ease),transform 1.3s var(--ease)}.r.in{opacity:1;transform:none}
+/* notes */
+.notes{background:#F1F1F1;color:#000;padding:clamp(64px,8vw,120px) var(--m)}
+.notes ol{margin:40px 0 0;padding:0;list-style:none;display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:40px 48px;counter-reset:n}
+.notes li{border-top:1px solid #000;padding-top:16px;font:var(--type-small);line-height:1.6}
+.notes li::before{counter-increment:n;content:counter(n,decimal-leading-zero);display:block;font:200 32px/1 var(--font-display);margin-bottom:16px}
+.notes li b{display:block;font:800 13px/1.4 var(--font-display-alt);text-transform:uppercase;margin-bottom:6px}
+@media (max-width:900px){nav ul{display:none}.masthead{grid-template-columns:1fr 1fr}.masthead .lbl:nth-child(2){display:none}.title{grid-template-columns:1fr}.vert{writing-mode:horizontal-tb;transform:none}.title-meta,.look,.date .row,.mani{grid-template-columns:1fr}.look .sticky{position:static}.look .ph.off{width:100%}}
+</style></head><body>
+<div class="curtain" id="curtain"><img src="../assets/logo/svg/fama-academy-mark-white.svg" alt=""></div>
+<nav class="wrap"><a href="#"><img src="../assets/logo/svg/fama-academy-mark-white.svg" alt="FAMA Academy" style="height:20px;display:block"></a><ul class="lbl" style="display:flex;gap:40px;list-style:none;margin:0;padding:0"><li><a href="#programas">Programas</a></li><li><a href="#casting">Casting</a></li><li><a href="#sedes">Sedes</a></li></ul><a class="lbl" href="#casting">Solicitar plaza</a></nav>
+
+<header class="hero"><div class="ph"><span>Fotografía a sangre · 100 vh · sin texto encima</span></div></header>
+<div class="masthead"><span class="lbl dim">Nº 01 · Otoño – Invierno 2026</span><img src="../assets/logo/svg/fama-academy-horizontal-white.svg" alt="FAMA Academy" style="height:18px"><span class="lbl dim">Madrid · Barcelona</span></div>
+
+<section class="title">
+<span class="lbl dim vert r">Escuela de modelos de alta gama</span>
+<div><h1 class="syne r">Presencia<em>No se enseña. Se entrena.</em></h1>
+<div class="title-meta r"><p>Formación presencial en pasarela, fotografía y carrera. Grupos de doce. Acceso directo a agencias y castings.</p><a class="btn solid" href="#casting">Solicitar plaza</a></div></div>
+</section>
+
+<div class="ticker"><div><span><b>Casting abierto</b> · Madrid · 12 Oct 2026</span><span>Pasarela · Fotografía · Carrera</span><span><b>Barcelona</b> · Passeig de Gràcia</span><span>Promoción 2026 · Plazas limitadas</span><span><b>Casting abierto</b> · Madrid · 12 Oct 2026</span><span>Pasarela · Fotografía · Carrera</span><span><b>Barcelona</b> · Passeig de Gràcia</span><span>Promoción 2026 · Plazas limitadas</span></div></div>
+
+<section id="programas" class="look"><div class="sticky r"><span class="num dim">01 / 03</span><h2 class="syne">Pasarela<small>Madrid · Barcelona</small></h2><dl><dt>Duración</dt><dd>12 semanas</dd><dt>Grupo</dt><dd>Máximo 12 alumnas</dd><dt>Incluye</dt><dd>Book profesional · casting final</dd></dl><a class="btn" href="#">Ver programa</a></div><div class="col"><div class="ph r"><span>Fotografía · 4:5</span></div><div class="ph off r"><span>Fotografía · detalle</span></div></div></section>
+<section class="look"><div class="sticky r"><span class="num dim">02 / 03</span><h2 class="syne">Fotografía<small>Barcelona</small></h2><dl><dt>Duración</dt><dd>8 semanas</dd><dt>Grupo</dt><dd>Máximo 8 alumnas</dd><dt>Incluye</dt><dd>Editorial con fotógrafo invitado</dd></dl><a class="btn" href="#">Ver programa</a></div><div class="col"><div class="ph off r" style="align-self:flex-start"><span>Fotografía · detalle</span></div><div class="ph r"><span>Fotografía · 4:5</span></div></div></section>
+<section class="look"><div class="sticky r"><span class="num dim">03 / 03</span><h2 class="syne">Carrera<small>Madrid</small></h2><dl><dt>Duración</dt><dd>6 semanas</dd><dt>Grupo</dt><dd>Máximo 10 alumnas</dd><dt>Incluye</dt><dd>Agencias · contratos · imagen</dd></dl><a class="btn" href="#">Ver programa</a></div><div class="col"><div class="ph r"><span>Fotografía · 4:5</span></div></div></section>
+
+<section id="casting" class="white"><div class="date">
+<div class="syne big r">12 OCT</div>
+<div class="row"><div class="r"><span class="lbl" style="color:#4A4A4A">Próximo casting · Madrid</span><h2 class="syne" style="margin-top:28px">Casting abierto</h2></div><div class="r" style="display:flex;flex-direction:column;gap:40px;align-items:flex-start"><dl><dt>Hora</dt><dd>18:00 h</dd><dt>Lugar</dt><dd>Calle de Serrano, Madrid</dd><dt>Edad</dt><dd>14 – 24 años · sin experiencia</dd></dl><div style="display:flex;gap:16px;flex-wrap:wrap"><a class="btn solid" href="#">Reservar casting</a><a class="btn" href="#">Requisitos</a></div></div></div>
+</div></section>
+
+<section class="mani"><span class="lbl dim r">Manifiesto</span><p class="r">Menos ruido.<br><b>Más presencia.</b></p></section>
+
+<section id="sedes" class="strip"><div class="head r"><h2 class="syne">Sedes</h2><span class="lbl dim">Desliza →</span></div>
+<div class="rail">
+<figure class="r"><div class="ph"><span>Fotografía · Madrid</span></div><figcaption><h3>Madrid</h3><span class="lbl dim">Calle de Serrano</span></figcaption></figure>
+<figure class="r"><div class="ph"><span>Fotografía · Barcelona</span></div><figcaption><h3>Barcelona</h3><span class="lbl dim">Passeig de Gràcia</span></figcaption></figure>
+<figure class="r"><div class="ph"><span>Fotografía · aula</span></div><figcaption><h3>Aula</h3><span class="lbl dim">Pasarela de 18 m</span></figcaption></figure>
+<figure class="r"><div class="ph"><span>Fotografía · estudio</span></div><figcaption><h3>Estudio</h3><span class="lbl dim">Luz natural</span></figcaption></figure>
+</div></section>
+
+<footer>
+<div class="mark r"><img src="../assets/logo/svg/fama-academy-mark-white.svg" alt="FAMA Academy"></div>
+<div class="cols r"><div><span class="lbl dim">Escuela</span><ul><li>Programas</li><li>Admisiones</li><li>Castings</li><li>Equipo</li></ul></div><div><span class="lbl dim">Sedes</span><ul><li>Madrid — Calle de Serrano</li><li>Barcelona — Passeig de Gràcia</li></ul></div><div><span class="lbl dim">Contacto</span><ul><li>hola@famaacademy.es</li><li>+34 910 000 000</li><li>Instagram ↗</li></ul></div></div>
+<div class="bottom"><span>© 2026 FAMA Academy. Madrid · Barcelona.</span><span>Aviso legal · Privacidad</span></div>
+</footer>
+
+<section class="notes"><span class="lbl" style="color:#4A4A4A">Notas de la propuesta 2 · «Noche»</span><ol>
+<li><b>Negro como escenario</b>La web invierte la proporción 60/30/10: negro de fondo, blanco para el texto y un único bloque blanco (el casting) como golpe de luz. Es el riesgo principal: rompe la regla del fondo blanco y hay que decidirlo conscientemente.</li>
+<li><b>Syne ExtraBold</b>Titulares en Syne 800, la segunda tipografía permitida, con tracking muy cerrado. Más carácter y más moda que Montserrat Black; Montserrat Light queda como voz secundaria.</li>
+<li><b>Apertura cinematográfica</b>Cortina negra con el monograma que se levanta, y una fotografía a sangre a pantalla completa sin ningún texto. Primero la imagen, luego la marca.</li>
+<li><b>Cabecera de revista</b>Línea de «masthead» con número de edición, temporada y ciudades. La web se lee como una publicación, no como un catálogo de cursos.</li>
+<li><b>Cinta en movimiento</b>Un ticker lento con los mensajes clave. Único elemento animado de forma continua; velocidad de paseo, no de anuncio.</li>
+<li><b>Lookbook con texto fijo</b>Programas en columnas: el título queda fijo mientras las fotografías 4:5 desfilan a su lado, con una imagen descolgada al 70 % para romper la retícula.</li>
+<li><b>La fecha como titular</b>«12 OCT» a 24 vw es el elemento más grande de la página. La información práctica se convierte en gráfica.</li>
+<li><b>Cierre con el monograma</b>El footer se reduce al símbolo FF a gran tamaño, centrado, sin wordmark. Confianza de marca.</li>
+</ol></section>
+<script>
+setTimeout(()=>document.getElementById('curtain').classList.add('up'),1300);
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.1});
+document.querySelectorAll('.r').forEach((el,i)=>{el.style.transitionDelay=(i%3)*100+'ms';io.observe(el)});
+</script>
+</body></html>
