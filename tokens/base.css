@@ -1,0 +1,25 @@
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+body{margin:0;background:var(--bg);color:var(--fg);font:var(--type-body);text-wrap:pretty}
+h1,h2,h3,h4,.fa-display{font-family:var(--font-display);font-weight:var(--weight-display);text-transform:uppercase;letter-spacing:var(--tracking-display);line-height:var(--leading-display);margin:0;text-wrap:balance}
+.fa-secondary{font:var(--type-secondary);text-transform:uppercase;letter-spacing:var(--tracking-light)}
+.fa-statement{font:var(--type-statement);text-transform:uppercase}
+.fa-statement b{font-family:var(--font-display);font-weight:var(--weight-display);letter-spacing:var(--tracking-display)}
+.fa-giant{font:var(--type-giant);text-transform:uppercase;letter-spacing:-0.07em;white-space:nowrap}
+.fa-photo img{filter:var(--image-filter);transition:filter var(--dur-slow) var(--ease),transform var(--dur-image) var(--ease)}
+.fa-photo:hover img,a:hover .fa-photo img{filter:var(--image-filter-hover);transform:scale(var(--image-hover-scale))}
+.fa-reveal{opacity:0;transform:translateY(var(--reveal-rise));transition:opacity var(--dur-slow) var(--ease),transform var(--dur-slow) var(--ease)}.fa-reveal.in{opacity:1;transform:none}
+h1{font:var(--type-h1);text-transform:uppercase;letter-spacing:var(--tracking-display)}
+h2{font:var(--type-h2);text-transform:uppercase;letter-spacing:var(--tracking-display)}
+h3{font:var(--type-h3);text-transform:uppercase;letter-spacing:var(--tracking-display-sm)}
+h4{font:var(--type-h4);text-transform:uppercase;letter-spacing:var(--tracking-display-sm)}
+p{margin:0}
+a{color:var(--fg);text-decoration:none;text-underline-offset:3px;transition:opacity var(--dur-base) var(--ease)}
+a:hover{opacity:1}
+.fa-label{font:var(--type-label);text-transform:uppercase;letter-spacing:var(--tracking-label)}
+.fa-mono-rule{border:0;border-top:var(--rule);margin:0}
+.fa-rule{border:0;border-top:var(--hairline);margin:0}
+img{display:block;max-width:100%}
+button,input,select,textarea{font:inherit;color:inherit}
+:focus-visible{outline:none;box-shadow:var(--focus-ring)}
+::selection{background:var(--black);color:var(--white)}

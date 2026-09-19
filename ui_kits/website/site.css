@@ -1,0 +1,124 @@
+:root{--m:10vw;--ease:cubic-bezier(.2,.6,.2,1);--line:rgba(0,0,0,.18);--fg:#000;--bg:#fff;--fg2:#000;--fg3:#4A4A4A;--dim:#4A4A4A}
+body{margin:0;background:#fff;color:#000;font:var(--type-body);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-decoration:none}a:hover{opacity:1}
+img,video{display:block}
+.wrap{padding-left:var(--m);padding-right:var(--m)}
+.lbl{font:500 11px/1 var(--font-body);text-transform:uppercase;letter-spacing:.26em}
+.dim{color:var(--dim)}
+.syne{font-family:var(--font-display);font-weight:800;text-transform:uppercase;letter-spacing:-.05em;line-height:.86;margin:0}
+.light{font:300 clamp(20px,2.4vw,40px)/1.2 var(--font-display-secondary);text-transform:uppercase;letter-spacing:.08em}
+.band{background:#000;color:#fff;--fg:#fff;--fg2:#F1F1F1;--fg3:#D0D0D0;--dim:#9A9A9A;--line:rgba(255,255,255,.18)}
+.pic{position:relative;overflow:hidden;background:#F1F1F1}
+.pic img{width:100%;height:100%;object-fit:cover;filter:grayscale(1);transition:transform 1.6s var(--ease),filter 1.2s var(--ease)}
+.pic:hover img,a:hover .pic img{transform:scale(1.03);filter:none}
+.curtain{position:fixed;inset:0;background:#000;z-index:100;display:grid;place-items:center;transition:transform 1.2s cubic-bezier(.7,0,.2,1)}
+.curtain.up{transform:translateY(-100%)}
+.curtain img{height:40px;opacity:0;animation:fadeIn 1s .2s var(--ease) forwards}
+@keyframes fadeIn{to{opacity:1}}
+nav{position:fixed;top:0;left:0;right:0;z-index:20;height:80px;display:flex;align-items:center;justify-content:space-between;gap:32px;color:#fff;text-shadow:0 1px 12px rgba(0,0,0,.55);transition:background .5s var(--ease),height .5s var(--ease),transform .5s var(--ease),box-shadow .5s var(--ease)}
+nav img{filter:drop-shadow(0 1px 8px rgba(0,0,0,.6))}
+nav.scrolled{background:#000;height:64px;box-shadow:0 1px 0 rgba(255,255,255,.18);text-shadow:none}nav.scrolled img{filter:none}
+.hero .cap{text-shadow:0 1px 12px rgba(0,0,0,.55)}
+nav.hidden{transform:translateY(-100%)}
+nav a{white-space:nowrap}nav ul{display:flex;gap:36px;list-style:none;margin:0;padding:0}
+.masthead{display:grid;grid-template-columns:1fr auto 1fr;gap:24px;align-items:center;padding:28px var(--m);border-bottom:1px solid var(--line)}
+.masthead .lbl:last-child{text-align:right}
+.sec{padding:clamp(96px,12vw,200px) var(--m) 0}
+.sec.pad{padding-bottom:clamp(96px,12vw,200px)}
+.head{display:grid;grid-template-columns:auto 1fr auto;gap:32px;align-items:baseline;padding-top:28px;border-top:1px solid var(--line)}
+.head .num{font:300 clamp(28px,3vw,44px)/1 var(--font-display-secondary);letter-spacing:.04em}
+.h2{font-size:clamp(28px,4vw,72px)}
+.two{display:grid;min-width:0;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(32px,5vw,96px);align-items:start}
+.sticky{position:sticky;top:120px}
+.body{font:var(--type-body);color:var(--fg3);max-width:52ch;line-height:1.7}
+.body p{margin:0 0 20px}
+.list{margin:0;padding:0;list-style:none;counter-reset:n}
+.list li{border-top:1px solid var(--line);padding:28px 0;display:grid;grid-template-columns:56px minmax(0,1fr);gap:16px}
+.list li::before{counter-increment:n;content:"0" counter(n);font:300 14px/1.6 var(--font-display-secondary);letter-spacing:.2em}
+.list h3{font-family:var(--font-display-secondary);font-weight:500;text-transform:uppercase;letter-spacing:.02em;font-size:20px;line-height:1.05;margin:0 0 10px}
+.list p{margin:0;font:var(--type-small);color:var(--fg3);max-width:48ch;line-height:1.7}
+.btn{display:inline-flex;align-items:center;justify-content:center;height:60px;padding:0 44px;font:500 11px/1 var(--font-body);text-transform:uppercase;letter-spacing:.28em;border:1px solid var(--fg);color:var(--fg);background:transparent;transition:background .5s var(--ease),color .5s var(--ease);white-space:nowrap}
+.btn:hover{background:var(--fg);color:var(--bg)}
+.btn.solid{background:var(--fg);color:var(--bg)}.btn.solid:hover{background:transparent;color:var(--fg)}
+.band .btn{border-color:#fff;color:#fff}.band .btn:hover{background:#fff;color:#000}.band .btn.solid{background:#fff;color:#000}.band .btn.solid:hover{background:transparent;color:#fff}
+dl.data{display:grid;grid-template-columns:auto 1fr;gap:14px 32px;margin:0;font:var(--type-small)}
+dl.data dt{font:500 11px/1.6 var(--font-body);text-transform:uppercase;letter-spacing:.26em;color:var(--dim)}dl.data dd{margin:0;color:var(--fg2)}
+.quotes{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:48px 40px}
+.quotes blockquote{margin:0}.quotes p{font:300 clamp(18px,1.5vw,24px)/1.4 var(--font-display-secondary);margin:0}.quotes cite{display:flex;flex-direction:column;gap:6px;margin-top:24px;font-style:normal;font-size:10px;letter-spacing:.18em;text-align:left}.quotes cite span:first-child{color:var(--fg)}.quotes cite span:not(:first-child){color:var(--dim)}
+.giant{font-family:var(--font-display);font-weight:800;text-transform:uppercase;letter-spacing:-.07em;line-height:.8;white-space:nowrap;margin:0}
+footer .cols{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:32px}
+footer ul{list-style:none;margin:20px 0 0;padding:0;display:flex;flex-direction:column;gap:12px;font:var(--type-small);color:var(--fg2)}
+footer .cols ul.two{columns:2;column-gap:32px;display:block}footer .cols ul.two li{margin-bottom:12px;break-inside:avoid}
+
+.r{opacity:0;transform:translateY(32px);transition:opacity 1.3s var(--ease),transform 1.3s var(--ease)}.r.in{opacity:1;transform:none}
+@media (max-width:1100px){nav ul{display:none}.masthead{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}.masthead>:nth-child(2){display:none}.two,footer .cols{grid-template-columns:minmax(0,1fr)}.sticky{position:static}.head{grid-template-columns:auto 1fr}.head>*:last-child{display:none}footer .cols ul.two{columns:1}}
+
+.two>*,.title>*,[data-fit]{min-width:0}
+
+.head .syne{font-family:var(--font-display-secondary);font-weight:500;letter-spacing:.02em;line-height:1.1;font-size:clamp(18px,1.8vw,28px);max-width:32ch}
+.list h3{font-size:18px}.faq summary{font-size:18px}
+
+/* Long headlines (>4 words): Light statement with 1–2 Syne words */
+.stmt,.close h2.stmt,.title h1.stmt,.no h3.stmt,.esto h3.stmt{font:400 clamp(28px,4vw,64px)/1.1 var(--font-display-secondary);text-transform:uppercase;letter-spacing:0;margin:0;max-width:22ch;white-space:normal}
+.stmt b{font-family:var(--font-display);font-weight:800;letter-spacing:-.04em}
+
+/* Brand name never in Syne: FAMA / FAMA Academy / FAMA Management use the wordmark font */
+.fama{font-family:var(--font-wordmark);font-weight:600;letter-spacing:.02em;text-transform:uppercase}.fama .lt{font-weight:300}.syne .fama{font-size:.88em}.stmt b.fama{font-family:var(--font-wordmark);font-weight:600;letter-spacing:.02em}
+
+/* breathing room before buttons */
+.body+.btn,p+.btn,.light+.btn,.list+.btn,ul+.btn,dl+.btn,.acts{margin-top:32px}
+.stmt b{font-size:.9em}
+
+footer{padding:0 var(--m) 32px;display:grid;gap:clamp(48px,6vw,96px)}footer .cols{border-top:1px solid var(--line);padding-top:clamp(40px,5vw,72px)}footer .bottom{display:flex;justify-content:space-between;align-items:center;gap:24px;border-top:1px solid var(--line);padding-top:24px;font:var(--type-caption);color:var(--dim)}footer .bottom img{height:16px;opacity:.6}
+.close{padding-bottom:clamp(96px,12vw,200px)}
+.band .marcas img,.band.marcas img{filter:invert(1) grayscale(1)}
+footer#footer.band{padding-top:clamp(64px,8vw,120px)!important}footer#footer.band .cols{border-top:0;padding-top:0}
+
+nav,nav.scrolled{height:88px}nav.scrolled{height:76px}.navbtn,nav .btn{height:40px;min-height:40px;padding:0 22px;font-size:10px;margin:0;align-self:center;border-color:#fff;color:#fff}.navbtn:hover{background:#fff;color:#000}nav.scrolled .navbtn{background:#fff;color:#000}nav.scrolled .navbtn:hover{background:transparent;color:#fff}
+
+/* Mobile menu */
+.navr{display:flex;align-items:center;gap:16px}
+.menubtn{display:none;background:none;border:0;color:#fff;cursor:pointer;padding:12px 0;font:500 11px/1 var(--font-body);text-transform:uppercase;letter-spacing:.26em}
+.menu{position:fixed;inset:0;z-index:30;background:#000;color:#fff;padding:0 var(--m) 32px;display:flex;flex-direction:column;overflow-y:auto;transform:translateY(-100%);transition:transform .7s cubic-bezier(.7,0,.2,1);visibility:hidden}
+.menu.open{transform:none;visibility:visible}
+.menuhead{height:88px;flex-shrink:0;display:flex;align-items:center;justify-content:space-between}
+.menu ul{list-style:none;margin:auto 0;padding-top:24px!important;padding-bottom:32px!important;padding:0;display:flex;flex-direction:column;gap:14px}
+.menu ul a{font:600 clamp(22px,6vw,32px)/1.1 var(--font-display-secondary);text-transform:uppercase;letter-spacing:.04em}
+.menufoot{flex-shrink:0;display:flex;justify-content:space-between;gap:16px;border-top:1px solid rgba(255,255,255,.18);padding-top:20px}
+@media (max-width:1100px){.menubtn{display:inline-block}nav ul{display:none}.navbtn{display:none}nav.scrolled .navbtn{display:inline-flex}}
+
+/* Desktop: collapsed menu too */
+nav ul{display:none}
+.menubtn{display:inline-block}
+.menu{padding-bottom:48px}
+.menu ul{padding-top:24px!important}
+.menu ul a{font-size:clamp(22px,3.2vw,44px)}
+.menufoot{margin-top:auto}
+
+.crumbs{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+/* Section heads ≤4 words: Syne (FAMA stays in the wordmark font) */
+.head .h2.sy{font:800 clamp(26px,3vw,48px)/.9 var(--font-display)!important;letter-spacing:-.04em!important;text-transform:uppercase}.head .h2.sy .fama{font-size:.88em}
+
+/* All numbered section heads in Syne; long titles smaller, wrapping */
+.head .h2{font:800 clamp(26px,3vw,48px)/.9 var(--font-display)!important;letter-spacing:-.04em!important;text-transform:uppercase;text-wrap:balance}.head .h2:not(.sy){font-size:clamp(20px,2.1vw,32px)!important;line-height:1!important;max-width:30ch}.head .h2 .fama{font-size:.88em}
+.close{padding-top:clamp(96px,12vw,200px)}
+
+/* paired buttons: equal width */
+.acts{display:flex;gap:16px;flex-wrap:wrap}.acts .btn{flex:1 1 220px;min-width:220px}
+
+@media (max-width:1100px){footer .cols{grid-template-columns:1fr 1fr}}
+
+/* Numbered hairline list (thoughts / programme) */
+.thoughts{list-style:none;margin:0;padding:0;counter-reset:t}
+.thoughts li{display:grid;grid-template-columns:48px minmax(0,1fr);gap:16px;align-items:baseline;border-bottom:1px solid var(--line);padding:22px 0}
+.thoughts li:first-child{border-top:1px solid var(--line)}
+.thoughts li::before{counter-increment:t;content:"0" counter(t);font:300 14px/1 var(--font-display-secondary);letter-spacing:.2em;color:var(--dim)}
+.thoughts li span{font:300 clamp(18px,1.6vw,26px)/1.25 var(--font-display-secondary);text-transform:uppercase;letter-spacing:.06em}
+
+
+/* Pages without hero: black from the first pixel, nav solid, title starts under it */
+body.nohero nav{background:#000}.title.nohero{padding-top:calc(88px + clamp(64px,8vw,120px))}
+
+/* Secondary in-page navs must not inherit the fixed header rule */
+nav.legalnav,nav.cats,nav.crumbs,nav.faqnav,nav:not(#nav){position:static;top:auto;left:auto;right:auto;height:auto;z-index:auto;color:inherit;background:transparent;box-shadow:none;text-shadow:none;mix-blend-mode:normal;transition:none;justify-content:flex-start}nav.crumbs{position:absolute}

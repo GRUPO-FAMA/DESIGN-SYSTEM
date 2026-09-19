@@ -1,0 +1,43 @@
+:root{
+/* Base palette: 60 / 30 / 10. Nothing else is allowed. */
+--white:#FFFFFF;
+--black:#000000;
+--gray:#F1F1F1;
+/* Derived neutrals (only for hairlines / disabled — mixes of the three) */
+--gray-line:#E4E4E4;
+--gray-mid:#9A9A9A;
+--gray-dark:#4A4A4A;
+--gray-soft:#D0D0D0;/* body text on black */
+/* Hairlines at 18 % of the ink colour — the only sanctioned transparency */
+--line-on-white:rgba(0,0,0,.18);
+--line-on-black:rgba(255,255,255,.18);
+/* Semantic */
+--bg:var(--white);
+--bg-subtle:var(--gray);
+--bg-inverse:var(--black);
+--fg:var(--black);
+--fg-muted:var(--gray-dark);
+--fg-disabled:var(--gray-mid);
+--fg-inverse:var(--white);
+--surface-card:var(--gray);
+--surface-card-on-gray:var(--white);
+--border:var(--black);
+--border-subtle:var(--gray-line);
+--line:var(--line-on-white);
+/* Band (inverse block) — a section switches to these when it goes black */
+--band-bg:var(--black);
+--band-fg:var(--white);
+--band-fg-soft:var(--gray-soft);
+--band-fg-muted:var(--gray-mid);
+--band-line:var(--line-on-black);
+--action-bg:var(--black);
+--action-fg:var(--white);
+--action-bg-hover:var(--gray-dark);
+--focus-ring:0 0 0 2px var(--white),0 0 0 4px var(--black);
+--overlay:rgba(0,0,0,.6);
+--image-placeholder:var(--gray);
+--image-filter:grayscale(1);/* @kind other */ /* photography rests in B/W, returns to colour on hover */
+--image-filter-hover:grayscale(0);/* @kind other */
+}
+/* Apply to any section that goes black */
+.fa-band{background:var(--band-bg);color:var(--band-fg);--fg:var(--band-fg);--fg-muted:var(--band-fg-muted);--line:var(--band-line);--border:var(--white);--action-bg:var(--white);--action-fg:var(--black)}

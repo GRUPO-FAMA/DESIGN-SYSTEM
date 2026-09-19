@@ -1,0 +1,34 @@
+:root{
+/* 4px base */
+--space-1:4px;--space-2:8px;--space-3:12px;--space-4:16px;--space-5:24px;--space-6:32px;--space-7:48px;--space-8:64px;--space-9:96px;--space-10:128px;--space-11:160px;
+/* Layout */
+--safe-margin:10%;/* @kind spacing */ /* strict outer margin on every canvas: posters, social, slides, hero */
+--page-gutter:clamp(24px,5vw,80px);/* @kind spacing */
+--content-max:1440px;
+--measure:62ch;/* @kind spacing */
+--grid-gap:var(--space-5);
+--section-gap:clamp(96px,12vw,200px);/* @kind spacing */
+--page-margin:10vw;/* @kind spacing */ /* the 10 % safety margin becomes the web page margin */
+/* Shape: the brand is square. No radius anywhere except the round mark. */
+--radius-0:0px;
+--radius-round:999px;
+/* Borders */
+--hairline:1px solid var(--line);
+--rule:1px solid var(--black);
+--rule-strong:2px solid var(--black);
+/* Elevation: none. Depth is expressed with the gray surface, never with shadows. */
+--shadow-none:none;
+/* Motion: slow, editorial. Fades + 32px rise; images scale 3 %; never bounce */
+--ease:cubic-bezier(.2,.6,.2,1);/* @kind other */
+--ease-curtain:cubic-bezier(.7,0,.2,1);/* @kind other */
+--dur-fast:120ms;/* @kind other */--dur-base:500ms;/* @kind other */--dur-slow:1300ms;/* @kind other */--dur-image:1600ms;/* @kind other */
+--reveal-rise:32px;/* @kind other */
+--image-hover-scale:1.03;/* @kind other */
+--hover-opacity:0.6;/* @kind other */
+--press-opacity:0.45;/* @kind other */
+/* Controls */
+--control-h-sm:40px;--control-h-md:52px;--control-h-lg:60px;
+--control-px-sm:20px;--control-px-md:32px;--control-px-lg:44px;
+/* Canvas formats */
+--canvas-ig-post:1080px 1350px;/* @kind other */--canvas-ig-square:1080px 1080px;/* @kind other */--canvas-ig-story:1080px 1920px;/* @kind other */--canvas-poster-a3:1191px 1684px;/* @kind other */
+}

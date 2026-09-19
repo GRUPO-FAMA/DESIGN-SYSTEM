@@ -1,0 +1,71 @@
+:root{
+/* Editorial system (v2 «Noche»): Syne ExtraBold is the headline voice (2–4 words); Space Grotesk Light/SemiBold the secondary + mid voice; Montserrat survives only in the wordmark */
+--font-display:"Syne","Montserrat",system-ui,sans-serif;
+--font-display-secondary:"Space Grotesk","Montserrat",system-ui,sans-serif;
+--font-wordmark:"Montserrat",system-ui,sans-serif;
+--font-display-alt:"Montserrat",system-ui,sans-serif;
+--font-body:"Roboto",system-ui,sans-serif;
+--weight-display:800;
+--weight-display-mid:500;
+--weight-display-alt:900;
+--weight-display-light:300;
+--weight-body:400;
+--weight-body-medium:500;
+--weight-body-semibold:600;
+--weight-light:300;
+/* Display: always uppercase, tight tracking */
+--tracking-display:-0.05em;
+--tracking-display-sm:-0.03em;
+--tracking-light:0.14em;/* Montserrat Light secondary line */
+--tracking-label:0.26em;
+--tracking-button:0.28em;
+--tracking-body:0;
+--leading-display:0.86;
+--leading-heading:1.02;
+--leading-body:1.55;
+--leading-tight:1.2;
+/* Scale */
+--text-hero:clamp(44px,7.2vw,140px);
+--text-h1:clamp(36px,5vw,96px);
+--text-h2:clamp(28px,4.2vw,80px);
+--text-giant:clamp(64px,16vw,300px);/* a date or a single word as the largest element on the page */
+--text-secondary:clamp(20px,2.4vw,40px);
+--text-statement:clamp(28px,4.2vw,76px);
+--text-quote:clamp(18px,1.5vw,24px);
+--text-h3:24px;
+--text-h4:18px;
+--text-lead:18px;
+--text-body:16px;
+--text-small:14px;
+--text-caption:12px;
+--text-label:11px;
+/* Composite semantic styles */
+--type-hero:var(--weight-display) var(--text-hero)/var(--leading-display) var(--font-display);
+--type-h1:var(--weight-display) var(--text-h1)/var(--leading-display) var(--font-display);
+--type-h2:var(--weight-display) var(--text-h2)/var(--leading-heading) var(--font-display);
+--type-h3:var(--weight-display-mid) var(--text-h3)/1.1 var(--font-display-secondary);
+--type-h4:var(--weight-display-mid) var(--text-h4)/1.1 var(--font-display-secondary);
+--type-section:var(--weight-display-mid) clamp(18px,1.8vw,28px)/1.1 var(--font-display-secondary);
+--tracking-mid:.02em;
+--type-giant:var(--weight-display) var(--text-giant)/0.8 var(--font-display);
+--type-secondary:var(--weight-display-light) var(--text-secondary)/1.2 var(--font-display-secondary);
+--type-statement:var(--weight-body) var(--text-statement)/1.1 var(--font-display-secondary);
+--type-quote:var(--weight-display-light) var(--text-quote)/1.4 var(--font-display-secondary);
+--type-wordmark-light:var(--weight-light) var(--text-h2)/var(--leading-heading) var(--font-wordmark);
+--type-ticker:var(--weight-display-light) clamp(22px,2.6vw,40px)/1 var(--font-display-secondary);
+--type-legacy-display:var(--weight-display-alt) var(--text-h1)/0.92 var(--font-wordmark);
+--type-lead:var(--weight-body) var(--text-lead)/var(--leading-body) var(--font-body);
+--type-body:var(--weight-body) var(--text-body)/var(--leading-body) var(--font-body);
+--type-small:var(--weight-body) var(--text-small)/var(--leading-body) var(--font-body);
+--type-caption:var(--weight-body) var(--text-caption)/var(--leading-tight) var(--font-body);
+--type-label:var(--weight-body-medium) var(--text-label)/1 var(--font-body);
+--type-button:var(--weight-body-medium) 11px/1 var(--font-body);
+/* Page patterns (Sept 2026 site build) */
+--type-section-num:var(--weight-display-light) clamp(28px,3vw,44px)/1 var(--font-display-secondary);
+--type-list-num:var(--weight-display-light) 14px/1.6 var(--font-display-secondary);
+--type-faq-q:var(--weight-display-mid) 20px/1.1 var(--font-display-secondary);
+--type-menu-item:var(--weight-display-light) clamp(22px,3.2vw,44px)/1.1 var(--font-display-secondary);
+--type-kpi:var(--weight-display) clamp(40px,4.6vw,80px)/.9 var(--font-display);
+--type-places:var(--weight-display-light) clamp(32px,3vw,48px)/1 var(--font-display-secondary);
+--syne-max-words:4;/* @kind other */
+}

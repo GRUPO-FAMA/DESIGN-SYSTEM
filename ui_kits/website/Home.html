@@ -1,0 +1,252 @@
+<!-- @dsCard group="Website" viewport="1440x900" name="Web v2 — Home" subtitle="famaacademy.es v2 · alternado negro/blanco · 26 páginas enlazadas (menú → todas)" -->
+<!DOCTYPE html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>FAMA Academy · Escuela de modelos de alta gama en Madrid y Barcelona</title><meta name="description" content="Escuela de modelos en Madrid y Barcelona. Máster Modelo Profesional de 3 meses, intensivos de verano, Openday y cursos online. Transformamos personas reales en modelos profesionales."><link rel="canonical" href="https://famaacademy.es/"><meta property="og:type" content="website"><meta property="og:site_name" content="FAMA Academy"><meta property="og:locale" content="es_ES"><meta property="og:title" content="FAMA Academy · Escuela de modelos de alta gama en Madrid y Barcelona"><meta property="og:description" content="Escuela de modelos en Madrid y Barcelona. Máster Modelo Profesional de 3 meses, intensivos de verano, Openday y cursos online. Transformamos personas reales en modelos profesionales."><meta property="og:url" content="https://famaacademy.es/"><meta property="og:image" content="https://famaacademy.es/wp-content/uploads/2026/06/MON_4990-1.jpg"><meta name="twitter:card" content="summary_large_image"><link rel="stylesheet" href="../../styles.css"><link rel="stylesheet" href="site.css"><link rel="stylesheet" href="course.css">
+<style>
+:root{--m:10vw;--ease:cubic-bezier(.2,.6,.2,1);--line:rgba(255,255,255,.18);--bg:#000;--fg:#fff;--fg2:#F1F1F1;--fg3:#D0D0D0;--dim:#9A9A9A;--inv-bg:#fff;--inv-fg:#000;--inv-dim:#4A4A4A;--logo-inv:1}
+body{margin:0;background:var(--bg);color:var(--fg);font:var(--type-body);-webkit-font-smoothing:antialiased;overflow-x:hidden;transition:background .6s var(--ease),color .6s var(--ease)}
+/* Theme: light */
+body.t-light{--bg:#fff;--fg:#000;--fg2:#000;--fg3:#4A4A4A;--dim:#4A4A4A;--line:rgba(0,0,0,.18);--inv-bg:#000;--inv-fg:#fff;--inv-dim:#9A9A9A;--logo-inv:0}
+/* Theme: alternating — light page, dark hero+title, dark modelos, dark footer */
+body.t-alt{--bg:#fff;--fg:#000;--fg2:#000;--fg3:#4A4A4A;--dim:#4A4A4A;--line:rgba(0,0,0,.18);--inv-bg:#000;--inv-fg:#fff;--inv-dim:#9A9A9A;--logo-inv:0}
+body.t-alt .band{background:#000;color:#fff;--fg:#fff;--fg2:#F1F1F1;--fg3:#D0D0D0;--dim:#9A9A9A;--line:rgba(255,255,255,.18);--logo-inv:1}
+body.t-alt .band.masthead,body.t-alt .band.ticker{border-color:rgba(255,255,255,.18)}
+body.t-alt .modelos{padding-bottom:clamp(96px,12vw,200px)}
+body.t-alt 
+.logo-w{filter:invert(calc(1 - var(--logo-inv)))}
+nav .logo-w{filter:none}
+/* switcher */
+.sw{position:fixed;right:24px;bottom:24px;z-index:50;display:flex;border:1px solid #9A9A9A;background:#000;color:#fff;mix-blend-mode:normal}
+.sw button{appearance:none;border:0;background:transparent;color:inherit;font:500 10px/1 var(--font-body);letter-spacing:.22em;text-transform:uppercase;padding:14px 18px;cursor:pointer;opacity:.5}
+.sw button.on{opacity:1;background:#fff;color:#000}
+a{color:inherit;text-decoration:none}a:hover{opacity:1}
+img,video{display:block}
+.wrap{padding-left:var(--m);padding-right:var(--m)}
+.lbl{font:500 11px/1 var(--font-body);text-transform:uppercase;letter-spacing:.26em}
+.dim{color:var(--dim)}
+.syne{font-family:var(--font-display);font-weight:800;text-transform:uppercase;letter-spacing:-.05em;line-height:.86;margin:0}
+.pic{position:relative;overflow:hidden;background:#111}
+.pic img{width:100%;height:100%;object-fit:cover;filter:grayscale(1);transition:transform 1.6s var(--ease),filter 1.2s var(--ease)}
+a:hover .pic img,.pic:hover img{transform:scale(1.03);filter:grayscale(0)}
+.curtain{position:fixed;inset:0;background:#000;z-index:100;display:grid;place-items:center;transition:transform 1.2s cubic-bezier(.7,0,.2,1)}
+.curtain.up{transform:translateY(-100%)}
+.curtain img{height:40px;opacity:0;animation:fadeIn 1s .2s var(--ease) forwards}
+@keyframes fadeIn{to{opacity:1}}
+nav.hidden{transform:translateY(-100%)}
+.hero{height:100vh;min-height:640px;position:relative;overflow:hidden}
+.hero video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:grayscale(1)}
+.hero .cap{position:absolute;left:var(--m);right:var(--m);bottom:40px;display:flex;justify-content:space-between;gap:24px;color:#fff}
+.masthead{display:grid;grid-template-columns:1fr auto 1fr;gap:24px;align-items:center;padding:28px var(--m);border-bottom:1px solid var(--line)}
+.masthead .lbl:last-child{text-align:right}
+.title{padding:clamp(80px,10vw,160px) var(--m) 0;display:grid;grid-template-columns:auto minmax(0,1fr);gap:clamp(24px,4vw,64px)}
+.vert{writing-mode:vertical-rl;transform:rotate(180deg);align-self:end}
+.title h1{font-size:140px}
+.title h1 em{display:block;font:300 clamp(20px,2.4vw,40px)/1.2 var(--font-display-secondary);letter-spacing:.08em;font-style:normal;margin-top:clamp(20px,3vw,48px);text-transform:uppercase;max-width:34ch}
+.title-meta{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:32px;align-items:end;margin-top:clamp(48px,6vw,96px)}
+.title-meta p{font:var(--type-lead);color:var(--fg2);max-width:44ch;margin:0}
+.ticker{margin-top:clamp(80px,10vw,160px);border-top:1px solid var(--line);border-bottom:1px solid var(--line);overflow:hidden;white-space:nowrap;padding:22px 0}
+.ticker div{display:inline-block;animation:run 48s linear infinite}
+.ticker span{font:300 clamp(22px,2.6vw,40px)/1 var(--font-display-secondary);text-transform:uppercase;letter-spacing:.18em;padding:0 40px}
+.ticker span b{font-weight:800;font-family:var(--font-display);letter-spacing:-.03em}
+@keyframes run{to{transform:translateX(-50%)}}
+/* método */
+.metodo{padding:clamp(96px,12vw,200px) var(--m) 0;display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:clamp(32px,5vw,96px);align-items:start}
+.metodo .pic{aspect-ratio:4/5}
+.metodo .sticky{position:sticky;top:120px}
+.metodo h2{font-size:80px;margin-top:28px;white-space:nowrap}
+.pillars{margin:clamp(40px,5vw,64px) 0 0;padding:0;list-style:none;counter-reset:p}
+.pillars li{border-top:1px solid var(--line);padding:28px 0;display:grid;grid-template-columns:48px 1fr;gap:16px}
+.pillars li::before{counter-increment:p;content:"0" counter(p);font:300 14px/1.6 var(--font-display-secondary);letter-spacing:.2em}
+.pillars h3{font-family:var(--font-display-secondary);font-weight:500;text-transform:uppercase;letter-spacing:.02em;font-size:22px;margin:0 0 10px}
+.pillars p{margin:0;font:var(--type-small);color:var(--fg3);max-width:44ch}
+/* programas */
+.look{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(32px,5vw,96px);padding:clamp(96px,12vw,200px) var(--m) 0;align-items:start}
+.look .sticky{position:sticky;top:120px}
+.look .num{font:300 12px/1 var(--font-body);letter-spacing:.3em}
+.look h2{font-size:80px;margin-top:32px}
+.look h2 small{display:block;font:300 clamp(16px,1.8vw,24px)/1.3 var(--font-display-secondary);letter-spacing:.18em;margin-top:20px}
+.look p{font:var(--type-small);color:var(--fg3);max-width:44ch;margin:40px 0 0;line-height:1.7}
+.look .acts{display:flex;gap:16px;flex-wrap:wrap;margin-top:48px}
+.look .col{display:flex;flex-direction:column;gap:clamp(24px,4vw,64px)}
+.look .pic{aspect-ratio:4/5}
+.look .pic.off{width:70%;align-self:flex-end;aspect-ratio:3/4}
+.btn{display:inline-flex;align-items:center;justify-content:center;height:60px;padding:0 44px;font:500 11px/1 var(--font-body);text-transform:uppercase;letter-spacing:.28em;border:1px solid currentColor;transition:background .5s var(--ease),color .5s var(--ease);white-space:nowrap}
+.btn.solid{background:var(--fg);color:var(--bg);border-color:var(--fg)}.btn.solid:hover{background:transparent;color:var(--fg)}
+body.t-alt .band .btn.solid{background:#fff;color:#000;border-color:#fff}body.t-alt .band .btn.solid:hover{background:transparent;color:#fff}
+.white .btn.solid{background:var(--inv-fg);color:var(--inv-bg);border-color:var(--inv-fg)}.white .btn.solid:hover{background:transparent;color:var(--inv-fg)}
+/* modelos */
+.modelos{padding:clamp(96px,12vw,200px) 0 0}
+.rail{display:flex;gap:clamp(12px,1.6vw,24px);overflow-x:auto;scroll-snap-type:x mandatory;padding:0 var(--m);scrollbar-width:none}
+.rail::-webkit-scrollbar{display:none}
+.rail a{flex:0 0 min(64vw,340px);scroll-snap-align:start}
+.rail .pic{aspect-ratio:3/4}
+.rail .cap{display:flex;justify-content:space-between;align-items:baseline;margin-top:16px;gap:12px}
+.rail .cap h3{font-family:var(--font-display-secondary);font-weight:500;text-transform:uppercase;letter-spacing:.02em;font-size:20px;margin:0}
+/* white block: intensivo + testimonios */
+.white{background:var(--inv-bg);color:var(--inv-fg);margin-top:clamp(96px,12vw,200px);transition:background .6s var(--ease),color .6s var(--ease)}
+.white .lbl.sub{color:var(--inv-dim)}
+.date{padding:clamp(96px,12vw,200px) var(--m)}
+.date .big{font-size:300px;letter-spacing:-.07em;line-height:.8;white-space:nowrap}
+.date .row{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:48px;align-items:start;margin-top:clamp(40px,5vw,80px);padding-top:32px;border-top:1px solid currentColor}
+.date h2{font-size:80px}
+.date p{font:var(--type-body);max-width:48ch;margin:0;line-height:1.7}
+.date .pic{aspect-ratio:2/3;max-width:360px}
+.quotes{padding:0 var(--m) clamp(96px,12vw,200px);display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:48px 40px;border-top:1px solid currentColor;padding-top:clamp(48px,6vw,96px)}
+.quotes blockquote{margin:0}
+.quotes p{font:300 clamp(18px,1.5vw,24px)/1.4 var(--font-display-secondary);margin:0}
+.quotes cite{display:block;margin-top:24px;font-style:normal}
+/* marcas */
+.marcas{padding:clamp(96px,12vw,200px) var(--m) 0}
+.marcas ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(5,minmax(0,1fr))}
+.marcas li{display:grid;place-items:center;height:120px;border-bottom:1px solid var(--line);border-right:1px solid var(--line)}
+.marcas li:nth-child(5n){border-right:0}
+.marcas img{max-width:60%;max-height:44px;filter:invert(var(--logo-inv)) grayscale(1);opacity:.85}
+/* manifesto */
+.mani{padding:clamp(96px,12vw,200px) var(--m);display:grid;grid-template-columns:minmax(0,2fr) minmax(0,10fr);gap:40px}
+.mani p{font:300 clamp(28px,4.2vw,76px)/1.05 var(--font-display-secondary);text-transform:uppercase;letter-spacing:-.01em;margin:0;max-width:18ch}
+.mani p b{font-family:var(--font-display);font-weight:800;letter-spacing:-.05em}
+/* footer */
+
+footer .mark{display:grid;place-items:center;padding-top:clamp(64px,8vw,120px)}
+footer .mark img{height:72px;width:auto}
+
+
+
+
+.r{opacity:0;transform:translateY(32px);transition:opacity 1.3s var(--ease),transform 1.3s var(--ease)}.r.in{opacity:1;transform:none}
+@media (max-width:1100px){.masthead{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}.masthead>:nth-child(2){display:none}.title{grid-template-columns:minmax(0,1fr)}.vert{writing-mode:horizontal-tb;transform:none}.title-meta,.metodo,.look,.date .row,.mani,.look .sticky,.metodo .sticky{position:static}.look .pic.off{width:100%}.marcas ul{grid-template-columns:repeat(2,1fr)}.marcas li:nth-child(5n){border-right:1px solid var(--line)}.marcas li:nth-child(2n){border-right:0}}
+[data-fit],.title>*,.two>*,.look>*,.metodo>*,.mani>*{min-width:0}.ticker{overflow:hidden}.stmt{font:400 clamp(28px,4vw,64px)/1.1 var(--font-display-secondary);text-transform:uppercase;letter-spacing:0;margin:0;max-width:22ch;white-space:normal}.stmt b{font-family:var(--font-display);font-weight:800;letter-spacing:-.04em}.fama{font-family:var(--font-wordmark);font-weight:600;letter-spacing:.02em;text-transform:uppercase}.fama .lt{font-weight:300}.syne .fama{font-size:.88em}.stmt b.fama{font-family:var(--font-wordmark);font-weight:600;letter-spacing:.02em}.body+.btn,p+.btn,.light+.btn,ol+.btn{margin-top:32px}.stmt b{font-size:.9em}@media (max-width:1100px){}
+.hero .still{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:grayscale(1)}
+.title-meta .acts{display:flex;gap:16px;flex-wrap:nowrap}
+.sticky-cta .btn.solid{background:#000;color:#fff;border-color:#000}
+.title .kpis{border-color:rgba(255,255,255,.18)}.title .kpis div{border-right:0}
+.title .rating,.title .rating b,.title .rating .stars{color:#fff}.title .rating span:last-child{color:#D0D0D0}
+.open{margin:32px 0 8px;border-top:1px solid var(--line)}.open>.lbl{display:block;padding-top:16px}.open ul{list-style:none;margin:12px 0 0;padding:0}.open li a{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:4px 16px;padding:14px 0;border-bottom:1px solid var(--line);font:var(--type-small)}.open li a span:first-child{font:600 14px/1.2 var(--font-display-secondary);text-transform:uppercase;letter-spacing:.04em;color:var(--fg)}.open li a span:nth-child(2){grid-column:1;color:var(--fg3)}.open li a b{grid-column:2;grid-row:1/3;align-self:center;font:500 10px/1 var(--font-body);text-transform:uppercase;letter-spacing:.22em;color:var(--fg)}
+.quote-band{padding:clamp(80px,10vw,160px) var(--m)}.qb{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:clamp(32px,6vw,120px);align-items:end}.quote-band .pull{margin:0;max-width:40ch}.quote-band .pull p{font-size:clamp(24px,2.8vw,44px)}.qb-side .rating,.qb-side .rating b,.qb-side .rating .stars{color:#fff}.qb-side .rating span:last-child{color:#D0D0D0}.qb-side .btn{border-color:#fff;color:#fff}.qb-side .btn:hover{background:#fff;color:#000}@media (max-width:1100px){.qb{grid-template-columns:minmax(0,1fr)}}
+@media (max-width:1100px){.title .kpis{grid-template-columns:1fr 1fr}.title .kpis div{border-right:0}}
+.metodo ol li:last-child{border-bottom:0}
+/* footer — same as Máster */
+footer{padding:0 var(--m) 32px;display:grid;gap:clamp(48px,6vw,96px)}footer .cols{border-top:1px solid var(--line);padding-top:clamp(40px,5vw,72px)}footer .bottom{display:flex;justify-content:space-between;align-items:center;gap:24px;border-top:1px solid var(--line);padding-top:24px;font:var(--type-caption);color:var(--dim)}footer .bottom img{height:16px;opacity:.6}
+footer .cols{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:32px}
+footer ul{list-style:none;margin:20px 0 0;padding:0;display:flex;flex-direction:column;gap:12px;font:var(--type-small);color:var(--fg2)}
+footer .cols ul.two{columns:2;column-gap:32px;display:block}footer .cols ul.two li{margin-bottom:12px;break-inside:avoid}
+footer#footer.band{padding-top:clamp(64px,8vw,120px)!important}footer#footer.band .cols{border-top:0;padding-top:0}
+@media (max-width:1100px){footer .cols{grid-template-columns:1fr 1fr}}
+
+/* Máster structure applied */
+#verano{display:block}#verano .online-row{width:100%;grid-template-columns:auto minmax(0,1fr)}.modelos .head a{grid-column:3;justify-self:end}
+.online-row{margin-top:clamp(64px,8vw,120px);border-top:1px solid var(--line);padding-top:28px;display:grid;grid-template-columns:auto minmax(0,1fr);gap:24px 48px;align-items:start}.online-row p{margin:0;font:300 clamp(20px,2.2vw,32px)/1.25 var(--font-display-secondary);text-transform:uppercase;letter-spacing:.08em}.online-row p .syne{display:inline-block;font:800 clamp(28px,3.4vw,56px)/.95 var(--font-display);letter-spacing:-.04em;text-transform:uppercase}.online-row p .syne+br+.syne{margin-top:6px}.online-row .btn{margin-top:32px}@media (max-width:1100px){.online-row{grid-template-columns:minmax(0,1fr)}}
+.big3{font-family:var(--font-display);font-weight:800;text-transform:uppercase;letter-spacing:-.05em;line-height:.86;margin:0}
+.lookgrid .sticky>p:not(.light){margin-top:32px}
+.band .btn{border-color:#fff;color:#fff}.band .btn:hover{background:#fff;color:#000}.band .btn.solid{background:#fff;color:#000}.band .btn.solid:hover{background:transparent;color:#fff}
+.band .open li a span:first-child,.band .open li a b,.band .rating,.band .rating b,.band .rating .stars,.band cite span:first-child{color:#fff}.band .open li a span:nth-child(2){color:#D0D0D0}
+.marcas:not(.band) img{filter:grayscale(1)}.marcas.band img{filter:invert(1) grayscale(1)}
+.ticker{margin-top:0}
+.modelos:not(.band) .cap .lbl{color:#4A4A4A}
+.light{font:300 clamp(20px,2.4vw,40px)/1.2 var(--font-display-secondary);text-transform:uppercase;letter-spacing:.14em}
+.mani{display:block}.mani .head{max-width:none}.mani>p{margin-top:clamp(48px,6vw,96px)}
+.two{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(32px,5vw,96px);align-items:start}@media (max-width:1100px){.two{grid-template-columns:minmax(0,1fr)}}
+#testimonios .quotes{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:48px 40px;border-top:0;padding-top:0;margin-top:clamp(48px,6vw,96px)}#testimonios .quotes p{font:300 clamp(18px,1.5vw,24px)/1.4 var(--font-display-secondary);margin:0}#testimonios .quotes cite,.sig{display:flex;flex-direction:column;gap:6px;margin-top:24px;font-style:normal;font-size:10px;letter-spacing:.18em}#testimonios cite span:first-child{color:var(--fg)}#testimonios cite span:not(:first-child){color:var(--dim)}#testimonios .rating,#testimonios .rating b,#testimonios .rating .stars{color:var(--fg)}
+.title.band{padding-bottom:clamp(96px,12vw,200px)}.kpis b{white-space:nowrap;display:block;min-width:0}.kpis div{min-width:0;padding-right:24px}
+.sec.band{margin-top:0}.quote-band{margin-top:0}
+.metodogrid .sticky,.lookgrid .sticky{top:120px}
+.metodo .pillars{margin-top:0}
+.look .col{display:grid;gap:clamp(16px,2vw,32px)}
+.giant{font-family:var(--font-display);font-weight:800;text-transform:uppercase;letter-spacing:-.07em;line-height:.8;white-space:nowrap;margin:0}
+.sec{padding:clamp(96px,12vw,200px) var(--m) 0}.sec.pad{padding-bottom:clamp(96px,12vw,200px)}
+.head{display:grid;grid-template-columns:auto 1fr auto;gap:32px;align-items:baseline;padding-top:28px;border-top:1px solid var(--line)}.head .num{font:300 clamp(28px,3vw,44px)/1 var(--font-display-secondary);letter-spacing:.04em}.h2{font:600 clamp(18px,1.8vw,28px)/1.1 var(--font-display-secondary)!important;text-transform:uppercase;letter-spacing:.06em!important;margin:0}
+.lookgrid,.metodogrid{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(32px,5vw,96px);align-items:start;margin-top:clamp(48px,6vw,96px)}
+.metodogrid{grid-template-columns:minmax(0,5fr) minmax(0,7fr)}
+section.look,section.metodo{display:block}
+.modelos .rail,.marcas ul{margin-top:clamp(48px,6vw,96px)}
+.verano .date{padding:0;margin-top:clamp(48px,6vw,96px)}
+.mani .head+*{margin-top:clamp(48px,6vw,96px)}
+@media (max-width:1100px){.lookgrid,.metodogrid{grid-template-columns:minmax(0,1fr)}.head{grid-template-columns:auto 1fr}.head>*:last-child{display:none}}
+
+/* Section heads ≤4 words: Syne (FAMA stays in the wordmark font) */
+.head .h2.sy{font:800 clamp(26px,3vw,48px)/.9 var(--font-display)!important;letter-spacing:-.04em!important;text-transform:uppercase}.head .h2.sy .fama{font-size:.88em}
+
+/* All numbered section heads in Syne; long titles smaller, wrapping */
+.head .h2{font:800 clamp(26px,3vw,48px)/.9 var(--font-display)!important;letter-spacing:-.04em!important;text-transform:uppercase;text-wrap:balance}.head .h2:not(.sy){font-size:clamp(20px,2.1vw,32px)!important;line-height:1!important;max-width:30ch}.head .h2 .fama{font-size:.88em}
+.close{padding-top:clamp(96px,12vw,200px)}
+</style><script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"EducationalOrganization","@id":"https://famaacademy.es/#org","name":"FAMA Academy","alternateName":"FAMA Academy · Escuela de modelos","url":"https://famaacademy.es","logo":"https://famaacademy.es/wp-content/uploads/fama-academy-logo.png","description":"Escuela de modelos de alta gama en Madrid y Barcelona. Máster Modelo Profesional, intensivos de verano, Openday y cursos online.","foundingDate":"2011","telephone":"+34678210334","email":"hola@famaacademy.es","sameAs":["https://www.instagram.com/famaacademy","https://www.tiktok.com/@famaacademy","https://www.youtube.com/@famaacademy_escuelamodelos/","https://famamanagement.com/","https://famaspaces.es/","https://famaagency.es"],"address":[{"@type":"PostalAddress","streetAddress":"Calle Bormonia, 9","addressLocality":"Madrid","postalCode":"28037","addressCountry":"ES"},{"@type":"PostalAddress","streetAddress":"Carrer de Pau Claris, 79","addressLocality":"Barcelona","postalCode":"08010","addressCountry":"ES"}],"parentOrganization":{"@type":"Organization","name":"FAMA","url":"https://famaagency.es"}},{"@type":"WebSite","url":"https://famaacademy.es","name":"FAMA Academy","inLanguage":"es"}]}</script></head><body class="t-alt">
+<div class="curtain" id="curtain"><img src="../../assets/logo/svg/fama-academy-mark-white.svg" alt=""></div>
+<nav id="nav" data-cta="MasterMadrid.html#convocatorias" data-label="Solicitar plaza"></nav>
+
+<header class="hero"><video autoplay muted loop playsinline poster="https://famaacademy.es/wp-content/uploads/2026/08/FAMAACADEMY1.webp" src="https://talentifind-public-resources.s3.eu-west-1.amazonaws.com/academy/Campan%CC%83a_Septiembre_Ma%CC%81ster_de_Modelo_Horizontal___.mp4"></video><div class="cap"><span class="lbl">Campaña septiembre · Máster de Modelo</span><span class="lbl">Madrid · Barcelona</span></div></header>
+<div class="masthead band"><span class="lbl dim">Nº 01 · Otoño – Invierno 2026</span><img class="logo-w" src="../../assets/logo/svg/fama-academy-horizontal-white.svg" alt="FAMA Academy" style="height:18px"><span class="lbl dim">Escuela de modelos · Madrid · Barcelona</span></div>
+
+<section class="title band">
+<span class="lbl dim vert r">Más de 15 años formando modelos</span>
+<div><h1 class="stmt r" style="font-size:clamp(32px,5vw,88px)"><b>Sé el modelo</b> que las marcas más exigentes demandan</h1>
+<div class="title-meta r"><p>Más de 15 años formando y acompañando modelos para que estén 100% preparados para trabajar en cualquier escenario.</p><div class="acts"><a class="btn solid" href="MasterMadrid.html#convocatorias">Solicitar plaza</a><a class="btn" href="Openday.html">Reservar Openday</a></div></div>
+<a class="rating r" href="https://www.google.com/maps/search/?api=1&query=Google&query_place_id=ChIJtSXZswsvQg0RgmtxKBz4RKY" target="_blank" rel="noopener" style="margin-top:32px"><span class="stars" aria-hidden="true">★★★★★</span><span><b>4,9</b> · 1.638 reseñas en Google</span></a>
+<div class="kpis r" style="margin-top:clamp(64px,8vw,120px)"><div><b data-fit="72">+15</b><span class="lbl dim">años formando modelos</span></div><div><b data-fit="72">+1.000</b><span class="lbl dim">alumnos formados</span></div><div><b data-fit="72">15</b><span class="lbl dim">alumnos por grupo</span></div><div><b data-fit="72">2</b><span class="lbl dim">sedes · Madrid y Barcelona</span></div></div></div>
+</section>
+
+<div class="ticker"><div><span><b>Openday</b> · Madrid · Barcelona</span><span>Máster Modelo Profesional</span><span><b>Intensivos de verano</b> · 2 semanas</span><span>Curso online de Casting · Curso online de Posado</span><span><b>Openday</b> · Madrid · Barcelona</span><span>Máster Modelo Profesional</span><span><b>Intensivos de verano</b> · 2 semanas</span><span>Curso online de Casting · Curso online de Posado</span></div></div>
+
+<section id="master" class="sec look pad band"><div class="head r"><span class="num">01</span><h2 class="syne h2 sy">Formación presencial</h2><span class="lbl dim">Madrid · Barcelona</span></div><div class="lookgrid"><div class="sticky r"><h3 class="syne big3" data-fit="150">Máster Modelo Profesional</h3><p class="light" style="margin:28px 0 0;max-width:30ch">Tres meses para convertirte en el modelo que las marcas buscan</p><p>Un innovador método pedagógico que fomenta la confianza, la actitud, la autoestima y desarrolla tus habilidades personales. Clases y prácticas con los mejores profesionales de la industria de la moda para ser el modelo que las marcas más exigentes anhelan.</p><div class="open"><span class="lbl dim">Convocatorias 2026 y 2027</span><ul><li><a href="MasterMadrid.html#convocatorias"><span>Madrid · Otoño 2026</span><span>Viernes, fines de semana y tardes entre semana</span><b>Últimas plazas</b></a></li><li><a href="MasterBarcelona.html#convocatorias"><span>Barcelona · Enero 2027</span><span>Viernes tarde, sábados mañana y tarde</span><b>Plazas disponibles</b></a></li><li><a href="IntensivoVerano.html#convocatorias"><span>Madrid · Intensivos verano 2027</span><span>Dos semanas en julio o agosto, de lunes a viernes</span><b>Plazas disponibles</b></a></li></ul></div>
+<div class="acts"><a class="btn solid" href="MasterMadrid.html" title="Escuela de modelos en Madrid">+ Madrid</a><a class="btn" href="MasterBarcelona.html" title="Escuela de modelos en Barcelona">+ Barcelona</a></div></div>
+<div class="col"><div class="pic r"><img src="https://famaacademy.es/wp-content/uploads/2026/08/MON_4990-1-scaled-1-1024x683.webp" alt="Máster Modelo Profesional"></div><div class="pic off r"><img src="https://famaacademy.es/wp-content/uploads/2024/11/home-modelo-fama-alba-fama-academy.webp" alt="FAMA Academy, escuela de modelos de alta gama en Madrid y Barcelona"></div></div></div></section>
+
+<section id="metodo" class="sec metodo pad"><div class="head r"><span class="num">02</span><h2 class="syne h2 sy">Método <span class="fama">FAMA</span></h2><span class="lbl dim">De aspirante a modelo profesional en 3 meses</span></div><div class="metodogrid"><div class="pic r"><img src="https://famaacademy.es/wp-content/uploads/2026/08/METODOFAMA1.webp" alt="Método FAMA"></div>
+<div class="sticky r">
+<ol class="pillars">
+<li><div><h3>Una conexión exponencial</h3><p>Un profundo tejido de alianzas y vínculos que te permitirán colaboraciones con marcas y revistas de renombre</p></div></li>
+<li><div><h3>Una formación integral</h3><p>Los mejores en la industria dedicados a ofrecerte las herramientas más reconocidas para asegurar tu éxito</p></div></li>
+<li><div><h3>Una visibilidad ampliada</h3><p>Tu portafolio será publicado, propuesto para castings y compartido con marcas y profesionales de la industria para maximizar tus oportunidades</p></div></li>
+</ol><a class="btn" href="MetodoFama.html" style="margin-top:40px">Conocer el método</a></div></section>
+
+<section id="modelos" class="sec modelos pad band"><div class="head r"><span class="num">03</span><h2 class="syne h2 sy">Modelos</h2><a class="lbl dim" href="https://models.famaacademy.es/">Ver todos →</a></div>
+<div class="rail">
+<a class="r" href="https://models.famaacademy.es/women/model/adrianach/"><div class="pic"><img loading="lazy" src="https://famaacademy.es/wp-content/uploads/2024/11/home-modelo-fama-adriana-fama-academy.webp" alt="Adriana C"></div><div class="cap"><h3>Adriana C</h3><span class="lbl dim">Ver ficha</span></div></a>
+<a class="r" href="https://models.famaacademy.es/women/model/albar/"><div class="pic"><img loading="lazy" src="https://famaacademy.es/wp-content/uploads/2024/11/home-modelo-fama-alba-fama-academy.webp" alt="Alba R"></div><div class="cap"><h3>Alba R</h3><span class="lbl dim">Ver ficha</span></div></a>
+<a class="r" href="https://models.famaacademy.es/men/model/859/"><div class="pic"><img loading="lazy" src="https://famaacademy.es/wp-content/uploads/2024/11/home-modelo-fama-alejandro-fama-academy.webp" alt="Alejandro C"></div><div class="cap"><h3>Alejandro C</h3><span class="lbl dim">Ver ficha</span></div></a>
+<a class="r" href="https://models.famaacademy.es/men/model/768/"><div class="pic"><img loading="lazy" src="https://famaacademy.es/wp-content/uploads/2024/11/home-modelo-fama-alejandrop-fama-academy.webp" alt="Alejandro P"></div><div class="cap"><h3>Alejandro P</h3><span class="lbl dim">Ver ficha</span></div></a>
+<a class="r" href="https://models.famaacademy.es/women/model/amarachim/"><div class="pic"><img loading="lazy" src="https://famaacademy.es/wp-content/uploads/2024/11/home-modelo-fama-amarachi-fama-academy.webp" alt="Amarachi M"></div><div class="cap"><h3>Amarachi M</h3><span class="lbl dim">Ver ficha</span></div></a>
+<a class="r" href="https://models.famaacademy.es/women/model/ana-marias/"><div class="pic"><img loading="lazy" src="https://famaacademy.es/wp-content/uploads/2024/11/home-modelo-fama-anamaria-fama-academy.webp" alt="Ana Maria S"></div><div class="cap"><h3>Ana Maria S</h3><span class="lbl dim">Ver ficha</span></div></a>
+<a class="r" href="https://models.famaacademy.es/women/model/jvbm5/"><div class="pic"><img loading="lazy" src="https://famaacademy.es/wp-content/uploads/2024/11/home-modelo-fama-annie-fama-academy.webp" alt="Annie V"></div><div class="cap"><h3>Annie V</h3><span class="lbl dim">Ver ficha</span></div></a>
+<a class="r" href="https://models.famaacademy.es/men/model/525/"><div class="pic"><img loading="lazy" src="https://famaacademy.es/wp-content/uploads/2024/11/home-modelo-fama-artur-fama-academy.webp" alt="Artur S"></div><div class="cap"><h3>Artur S</h3><span class="lbl dim">Ver ficha</span></div></a>
+<a class="r" href="https://models.famaacademy.es/women/model/benedig/"><div class="pic"><img loading="lazy" src="https://famaacademy.es/wp-content/uploads/2024/11/home-modelo-fama-benedi-fama-academy.webp" alt="Benedi G"></div><div class="cap"><h3>Benedi G</h3><span class="lbl dim">Ver ficha</span></div></a>
+<a class="r" href="https://models.famaacademy.es/women/model/clara-jazminp/"><div class="pic"><img loading="lazy" src="https://famaacademy.es/wp-content/uploads/2024/11/home-modelo-fama-jazmin-fama-academy.webp" alt="Clara Jazmin P"></div><div class="cap"><h3>Clara Jazmin P</h3><span class="lbl dim">Ver ficha</span></div></a>
+<a class="r" href="https://models.famaacademy.es/men/model/776/"><div class="pic"><img loading="lazy" src="https://famaacademy.es/wp-content/uploads/2024/11/home-modelo-fama-daniel-fama-academy.webp" alt="Daniel G"></div><div class="cap"><h3>Daniel G</h3><span class="lbl dim">Ver ficha</span></div></a>
+<a class="r" href="https://models.famaacademy.es/women/model/v48jr/"><div class="pic"><img loading="lazy" src="https://famaacademy.es/wp-content/uploads/2024/11/home-modelo-fama-grethel-fama-academy.jpg.webp" alt="Grethel R"></div><div class="cap"><h3>Grethel R</h3><span class="lbl dim">Ver ficha</span></div></a>
+<a class="r" href="https://models.famaacademy.es/women/model/1koad/"><div class="pic"><img loading="lazy" src="https://famaacademy.es/wp-content/uploads/2024/11/home-modelo-fama-iris-fama-academy.webp" alt="Iris I"></div><div class="cap"><h3>Iris I</h3><span class="lbl dim">Ver ficha</span></div></a>
+<a class="r" href="https://models.famaacademy.es/men/model/792/"><div class="pic"><img loading="lazy" src="https://famaacademy.es/wp-content/uploads/2024/11/home-modelo-fama-javier-fama-academy.webp" alt="Javier T"></div><div class="cap"><h3>Javier T</h3><span class="lbl dim">Ver ficha</span></div></a>
+<a class="r" href="https://models.famaacademy.es/women/model/juliad/"><div class="pic"><img loading="lazy" src="https://famaacademy.es/wp-content/uploads/2024/11/home-modelo-fama-julia-fama-academy.webp" alt="Julia D"></div><div class="cap"><h3>Julia D</h3><span class="lbl dim">Ver ficha</span></div></a>
+<a class="r" href="https://models.famaacademy.es/women/model/leticiar/"><div class="pic"><img loading="lazy" src="https://famaacademy.es/wp-content/uploads/2024/11/home-modelo-fama-leticia-fama-academy.webp" alt="Leticia R"></div><div class="cap"><h3>Leticia R</h3><span class="lbl dim">Ver ficha</span></div></a>
+<a class="r" href="https://models.famaacademy.es/women/model/lucias/"><div class="pic"><img loading="lazy" src="https://famaacademy.es/wp-content/uploads/2024/11/home-modelo-fama-lucia-fama-academy.webp" alt="Lucia S"></div><div class="cap"><h3>Lucia S</h3><span class="lbl dim">Ver ficha</span></div></a>
+<a class="r" href="https://models.famaacademy.es/women/model/luz-divinan/"><div class="pic"><img loading="lazy" src="https://famaacademy.es/wp-content/uploads/2024/11/home-modelo-fama-luzdivina-fama-academy.webp" alt="Luz Divina N"></div><div class="cap"><h3>Luz Divina N</h3><span class="lbl dim">Ver ficha</span></div></a>
+<a class="r" href="https://models.famaacademy.es/men/model/737/"><div class="pic"><img loading="lazy" src="https://famaacademy.es/wp-content/uploads/2024/11/home-modelo-fama-manuel-fama-academy.webp" alt="Manuel I"></div><div class="cap"><h3>Manuel I</h3><span class="lbl dim">Ver ficha</span></div></a>
+<a class="r" href="https://models.famaacademy.es/men/model/615/"><div class="pic"><img loading="lazy" src="https://famaacademy.es/wp-content/uploads/2024/11/home-modelo-fama-pablo-fama-academy.webp" alt="Pablo B"></div><div class="cap"><h3>Pablo B</h3><span class="lbl dim">Ver ficha</span></div></a>
+<a class="r" href="https://models.famaacademy.es/women/model/mzm53/"><div class="pic"><img loading="lazy" src="https://famaacademy.es/wp-content/uploads/2024/11/home-modelo-fama-ting-fama-academy.webp" alt="Ting R"></div><div class="cap"><h3>Ting R</h3><span class="lbl dim">Ver ficha</span></div></a>
+</div></section>
+
+<section id="testimonios" class="sec pad">
+<div class="head r"><span class="num">04</span><h2 class="syne h2 sy">Testimonios</h2><span class="lbl dim">Alumnos y familias</span></div>
+<div class="two" style="margin-top:clamp(48px,6vw,96px)"><div class="r"><p class="light" style="margin:0;max-width:26ch">“La transformación es real: pasar de ser alguien tímida y, al pasar los días, sentirme segura de mí y de mi potencial.”</p><cite class="lbl sig"><span>Valentina</span><span>Alumna</span><span>14/09/2026</span></cite></div>
+<div class="r"><a class="rating" href="https://www.google.com/maps/search/?api=1&query=Google&query_place_id=ChIJtSXZswsvQg0RgmtxKBz4RKY" target="_blank" rel="noopener" style="margin:0"><span class="stars" aria-hidden="true">★★★★★</span><span><b>4,9</b> · 1.638 reseñas en Google</span></a><p class="body" style="margin-top:16px">1.555 valoraciones de cinco estrellas de alumnos y familias.</p></div></div>
+<div class="quotes" style="margin-top:clamp(48px,6vw,96px)">
+<blockquote class="r"><p>“Yo fui con cero experiencia, y ya me siento bastante profesional. Te abren muchas puertas al futuro con sus enseñanzas tanto de pasarela, como poses, maquillaje…”</p><cite class="lbl"><span>Lucía Adrada</span><span>Alumna</span><span>04/09/2026</span></cite></blockquote>
+<blockquote class="r"><p>“Mi hija ha salido encantada. Las profesoras son excelentes, el trato es muy cercano y les enseñan muchísimo, terminan el curso siendo auténticos profesionales.”</p><cite class="lbl"><span>Lucía Jiménez del Prado</span><span>Madre de alumna</span><span>04/09/2026</span></cite></blockquote>
+<blockquote class="r"><p>“Actualmente estoy trabajando con importantes firmas de moda y he conseguido trabajos con los que siempre había soñado.”</p><cite class="lbl"><span>Carmen G.</span><span>Alumna</span><span>22/06/2026</span></cite></blockquote>
+<blockquote class="r"><p>“Ha realizado mi hermana el curso y ha salido mucho más segura de sí misma, con un aprendizaje claro y muchos movimientos nuevos para su carrera como profesional.”</p><cite class="lbl"><span>Víctor Adrada</span><span>Hermano de alumna</span><span>04/09/2026</span></cite></blockquote>
+<blockquote class="r"><p>“Llegué sin experiencia y, menos de un año después, estaba trabajando en proyectos con diseñadores y marcas.”</p><cite class="lbl"><span>Sofía R.</span><span>Alumna</span><span>11/05/2026</span></cite></blockquote>
+<blockquote class="r"><p>“Todo lo que aprendí en FAMA me ha ayudado a firmar contratos con agencias y clientes importantes.”</p><cite class="lbl"><span>Ana T.</span><span>Alumna</span><span>19/07/2026</span></cite></blockquote>
+</div></section>
+
+<section class="sec marcas pad band"><div class="head r"><span class="num">05</span><h2 class="syne h2 sy">Han confiado</h2><span class="lbl dim">Marcas y medios</span></div><ul class="r">
+<li><img src="https://famaacademy.es/wp-content/uploads/2024/10/chanel.webp" alt="Chanel"></li><li><img src="https://famaacademy.es/wp-content/uploads/2024/10/dior.webp" alt="Dior"></li><li><img src="https://famaacademy.es/wp-content/uploads/2024/10/ch.webp" alt="CH"></li><li><img src="https://famaacademy.es/wp-content/uploads/2024/10/mercedes.webp" alt="Mercedes"></li><li><img src="https://famaacademy.es/wp-content/uploads/2024/10/mugler.webp" alt="Mugler"></li><li><img src="https://famaacademy.es/wp-content/uploads/2024/10/marie-claire.webp" alt="Marie Claire"></li><li><img src="https://famaacademy.es/wp-content/uploads/2024/10/women.webp" alt="Women"></li><li><img src="https://famaacademy.es/wp-content/uploads/2024/10/cortefiel.webp" alt="Cortefiel"></li><li><img src="https://famaacademy.es/wp-content/uploads/2024/10/vogue.webp" alt="Vogue"></li><li><img src="https://famaacademy.es/wp-content/uploads/2024/10/netflix.webp" alt="Netflix"></li>
+</ul></section>
+
+<section id="verano" class="sec pad verano"><div class="head r"><span class="num">06</span><h2 class="syne h2">Intensivos de verano y online</h2><span class="lbl dim">Julio · Agosto 2027 · Madrid</span></div><div class="date">
+<div class="giant r" data-fit="300">Verano 2027</div>
+<div class="row"><div class="r"><p class="light" style="margin:0">El Máster Modelo Profesional en dos semanas intensivas</p><p style="margin-top:32px">Nuestro Máster de Modelo Profesional pero en formato intensivo de verano. Logra convertirte en modelo profesional para trabajar con las marcas más exigentes en tan sólo 2 semanas, eso sí, de manera intensiva.</p><a class="btn solid" href="IntensivoVerano.html" style="margin-top:40px">Más información</a></div><div class="pic r" style="filter:none"><img src="https://famaacademy.es/wp-content/uploads/2026/08/curso-verano-modelo-683x1024.webp" alt="Intensivos de verano 2027"></div></div>
+</div>
+<div class="online-row r"><span class="lbl dim">Formación online</span><p><span class="syne">Curso de Casting.</span><br><span class="syne">Curso de Posado.</span><br><a class="btn" href="Online.html" style="margin-top:40px;font-family:var(--font-body);letter-spacing:.28em">Formación online</a></p></div>
+</section>
+
+<div class="sticky-cta" data-hide="#master"><a class="btn solid" href="MasterMadrid.html#convocatorias">Solicitar plaza</a></div>
+<footer id="footer"></footer>
+<script src="chrome.js"></script>
+<script src="site.js"></script>
+</body></html>
