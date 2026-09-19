@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<!-- @template name="Instagram cita 4:5" description="1080×1350 · testimonio en Space Grotesk Light sobre blanco o negro · sin foto · 10% margins" -->
+<helmet><script src="./ds-base.js"></script><style>body{margin:0;background:#F1F1F1}</style></helmet>
+<div ref="{{ rootRef }}" style="width:1080px;height:1350px;background:#FFFFFF;color:#000000;position:relative;overflow:hidden;font-family:Roboto,system-ui,sans-serif">
+<div style="position:absolute;left:108px;right:108px;top:108px;bottom:108px;display:flex;flex-direction:column;justify-content:space-between">
+<div style="display:flex;justify-content:space-between;align-items:center"><img data-zone="logo" src="../../assets/logo/svg/fama-academy-horizontal-black.svg" alt="FAMA Academy" style="height:24px"><span style="font:500 18px/1 Roboto,system-ui,sans-serif;text-transform:uppercase;letter-spacing:0.26em;opacity:.7">★★★★★ 4,9 · 1.638 reseñas</span></div>
+<div><div style="font:800 40px/1 Syne,Montserrat,system-ui,sans-serif;letter-spacing:-0.05em;margin-bottom:40px">“</div><p style="margin:0;font:300 52px/1.25 'Space Grotesk',Montserrat,system-ui,sans-serif">La transformación es real: pasar de ser alguien tímida y, al pasar los días, sentirme segura de mí y de mi potencial.</p></div>
+<div style="display:flex;justify-content:space-between;align-items:flex-end;border-top:1px solid currentColor;padding-top:28px"><div style="display:flex;flex-direction:column;gap:12px"><span style="font:500 24px/1 'Space Grotesk',Montserrat,system-ui,sans-serif;text-transform:uppercase;letter-spacing:0.02em">Valentina</span><span style="font:500 16px/1 Roboto,system-ui,sans-serif;text-transform:uppercase;letter-spacing:0.26em;opacity:.7">Alumna</span><span style="font:500 16px/1 Roboto,system-ui,sans-serif;text-transform:uppercase;letter-spacing:0.26em;opacity:.7">14/09/2026</span></div><img data-zone="mark" src="../../assets/logo/svg/fama-academy-mark-black.svg" alt="" style="height:44px"></div>
+</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1080,&quot;height&quot;:1350},&quot;inverse&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Layout&quot;}}">
+class Component extends DCLogic {
+  rootRef = React.createRef();
+  componentDidMount() { this.apply(); this.fitAll(); if (document.fonts) document.fonts.ready.then(() => this.fitAll()); window.addEventListener('resize', () => this.fitAll()); }
+  componentDidUpdate() { this.apply(); this.fitAll(); }
+  apply() {
+    const r = this.rootRef.current; if (!r) return;
+    const inverse = this.props.inverse ?? false;
+    r.style.background = inverse ? '#000000' : '#FFFFFF'; r.style.color = inverse ? '#FFFFFF' : '#000000';
+    const base = '../../assets/logo/svg/';
+    r.querySelector('[data-zone="logo"]').src = base + (inverse ? 'fama-academy-horizontal-white.svg' : 'fama-academy-horizontal-black.svg');
+    r.querySelector('[data-zone="mark"]').src = base + (inverse ? 'fama-academy-mark-white.svg' : 'fama-academy-mark-black.svg');
+  }
+
+  fitAll() {
+    const r = this.rootRef.current; if (!r) return;
+    r.querySelectorAll('[data-fit]').forEach(h => {
+      const p = h.parentElement, cs = getComputedStyle(p);
+      const box = p.clientWidth - parseFloat(cs.paddingLeft) - parseFloat(cs.paddingRight); if (box <= 0) return;
+      if (!h.dataset.max) h.dataset.max = parseFloat(getComputedStyle(h).fontSize);
+      const probe = document.createElement('span'); probe.style.cssText = 'position:absolute;visibility:hidden;white-space:nowrap;font:inherit;letter-spacing:inherit';
+      const nowrap = getComputedStyle(h).whiteSpace === 'nowrap';
+      const words = h.textContent.trim().split(/\s+/); probe.textContent = nowrap ? words.join(' ') : words.reduce((a, b) => b.length > a.length ? b : a, '');
+      h.appendChild(probe); let s = +h.dataset.max; h.style.fontSize = s + 'px';
+      while (s > 20 && probe.getBoundingClientRect().width > box) { s -= 2; h.style.fontSize = s + 'px'; }
+      probe.remove();
+    });
+  }
+  renderVals() { return { rootRef: this.rootRef }; }
+}
+</script>
+</body>
+</html>

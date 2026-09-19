@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<!-- @template name="Miniatura YouTube 16:9" description="1280×720 · foto B/W a la derecha, banda negra izquierda con titular Syne de 2–4 palabras · legible a 200 px de ancho" -->
+<helmet><script src="./ds-base.js"></script><script src="../shared/image-slot.js"></script><style>body{margin:0;background:#F1F1F1}</style></helmet>
+<div ref="{{ rootRef }}" style="width:1280px;height:720px;background:#000000;color:#FFFFFF;position:relative;overflow:hidden;font-family:Roboto,system-ui,sans-serif">
+<div data-zone="photo" style="position:absolute;top:0;bottom:0;right:0;width:640px;filter:grayscale(1)"><image-slot id="yt-photo" shape="rect" placeholder="Fotografía · rostro centrado"></image-slot></div>
+<div data-zone="panel" style="position:absolute;left:0;top:0;bottom:0;width:640px;background:#000000;color:#FFFFFF">
+<div style="position:absolute;left:72px;right:56px;top:72px;bottom:72px;display:flex;flex-direction:column;justify-content:space-between">
+<img data-zone="logo" src="../../assets/logo/svg/fama-academy-horizontal-white.svg" alt="FAMA Academy" style="height:22px;align-self:flex-start">
+<div><span style="display:inline-block;font:500 16px/1 Roboto,system-ui,sans-serif;text-transform:uppercase;letter-spacing:0.26em;border-top:1px solid currentColor;padding-top:12px;opacity:.7">Cómo ser modelo</span><div style="font:800 120px/0.86 Syne,Montserrat,system-ui,sans-serif;text-transform:uppercase;letter-spacing:-0.05em;margin-top:28px" data-fit="1">Primer casting</div><div style="font:300 30px/1.2 'Space Grotesk',Montserrat,system-ui,sans-serif;text-transform:uppercase;letter-spacing:0.14em;margin-top:20px">Qué esperar y cómo prepararte</div></div>
+<span style="font:500 16px/1 Roboto,system-ui,sans-serif;text-transform:uppercase;letter-spacing:0.26em;opacity:.7">famaacademy.es</span>
+</div></div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1280,&quot;height&quot;:720},&quot;photoSide&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;right&quot;,&quot;left&quot;],&quot;default&quot;:&quot;right&quot;,&quot;tsType&quot;:&quot;'right'|'left'&quot;,&quot;section&quot;:&quot;Layout&quot;},&quot;inverse&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Layout&quot;},&quot;blackAndWhite&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Photo&quot;}}">
+class Component extends DCLogic {
+  rootRef = React.createRef();
+  componentDidMount() { this.apply(); this.fitAll(); if (document.fonts) document.fonts.ready.then(() => this.fitAll()); window.addEventListener('resize', () => this.fitAll()); }
+  componentDidUpdate() { this.apply(); this.fitAll(); }
+  apply() {
+    const r = this.rootRef.current; if (!r) return;
+    const q = z => r.querySelector('[data-zone="' + z + '"]');
+    const right = (this.props.photoSide ?? 'right') === 'right'; const inv = this.props.inverse ?? false;
+    q('photo').style.right = right ? '0' : 'auto'; q('photo').style.left = right ? 'auto' : '0';
+    q('panel').style.left = right ? '0' : 'auto'; q('panel').style.right = right ? 'auto' : '0';
+    q('panel').style.background = inv ? '#FFFFFF' : '#000000'; q('panel').style.color = inv ? '#000000' : '#FFFFFF';
+    q('logo').src = '../../assets/logo/svg/' + (inv ? 'fama-academy-horizontal-black.svg' : 'fama-academy-horizontal-white.svg');
+    q('photo').style.filter = (this.props.blackAndWhite ?? true) ? 'grayscale(1)' : 'none';
+  }
+  fitAll() {
+    const r = this.rootRef.current; if (!r) return;
+    r.querySelectorAll('[data-fit]').forEach(h => {
+      const p = h.parentElement, cs = getComputedStyle(p);
+      const box = p.clientWidth - parseFloat(cs.paddingLeft) - parseFloat(cs.paddingRight); if (box <= 0) return;
+      if (!h.dataset.max) h.dataset.max = parseFloat(getComputedStyle(h).fontSize);
+      const probe = document.createElement('span'); probe.style.cssText = 'position:absolute;visibility:hidden;white-space:nowrap;font:inherit;letter-spacing:inherit';
+      const nowrap = getComputedStyle(h).whiteSpace === 'nowrap';
+      const words = h.textContent.trim().split(/\s+/); probe.textContent = nowrap ? words.join(' ') : words.reduce((a, b) => b.length > a.length ? b : a, '');
+      h.appendChild(probe); let s = +h.dataset.max; h.style.fontSize = s + 'px';
+      while (s > 20 && probe.getBoundingClientRect().width > box) { s -= 2; h.style.fontSize = s + 'px'; }
+      probe.remove();
+    });
+  }
+  renderVals() { return { rootRef: this.rootRef }; }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<!-- @template name="Email · cabecera 600 px" description="600×720 · cabecera de newsletter: logo, foto B/W 600×300, banda negra con titular, cuerpo Roboto y botón · exportar como imagen o recrear en HubSpot" -->
+<helmet><script src="./ds-base.js"></script><script src="../shared/image-slot.js"></script><style>body{margin:0;background:#F1F1F1}</style></helmet>
+<div ref="{{ rootRef }}" style="width:600px;background:#FFFFFF;color:#000000;font-family:Roboto,system-ui,sans-serif">
+<div style="height:72px;display:flex;align-items:center;justify-content:space-between;padding:0 40px;border-bottom:1px solid rgba(0,0,0,.18)"><img src="../../assets/logo/svg/fama-academy-horizontal-black.svg" alt="FAMA Academy" style="height:16px"><span style="font:500 10px/1 Roboto,system-ui,sans-serif;text-transform:uppercase;letter-spacing:0.26em;color:#4A4A4A">Madrid · Barcelona</span></div>
+<div data-zone="photo" style="height:300px;position:relative;filter:grayscale(1)"><image-slot id="email-photo" shape="rect" placeholder="Fotografía 2:1"></image-slot></div>
+<div data-zone="band" style="background:#000000;color:#FFFFFF;padding:40px"><span style="display:inline-block;font:500 10px/1 Roboto,system-ui,sans-serif;text-transform:uppercase;letter-spacing:0.26em;border-top:1px solid currentColor;padding-top:10px;opacity:.7">Convocatorias 2026</span><div style="font:800 56px/0.86 Syne,Montserrat,system-ui,sans-serif;text-transform:uppercase;letter-spacing:-0.05em;margin-top:20px" data-fit="1">Últimas plazas</div><div style="font:300 20px/1.2 'Space Grotesk',Montserrat,system-ui,sans-serif;text-transform:uppercase;letter-spacing:0.14em;margin-top:14px">Máster Modelo Profesional · Madrid</div></div>
+<div style="padding:40px"><p style="margin:0;font:400 16px/1.6 Roboto,system-ui,sans-serif;color:#4A4A4A">Quedan pocas plazas en los grupos de viernes tarde y sábados. Grupos de 15 personas, profesorado en activo y book profesional incluido.</p><a href="#" style="display:inline-block;margin-top:28px;padding:18px 32px;border:1px solid #000000;background:#000000;color:#FFFFFF;font:500 11px/1 Roboto,system-ui,sans-serif;text-transform:uppercase;letter-spacing:0.26em;letter-spacing:0.28em;text-decoration:none">Solicitar plaza</a></div>
+<div style="padding:24px 40px 32px;border-top:1px solid rgba(0,0,0,.18);font:400 11px/1.5 Roboto,system-ui,sans-serif;color:#9A9A9A">© 2026 FAMA Academy. Madrid · Barcelona. · <span style="text-decoration:underline">Darse de baja</span></div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:600,&quot;height&quot;:760},&quot;bandWhite&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Layout&quot;},&quot;blackAndWhite&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Photo&quot;}}">
+class Component extends DCLogic {
+  rootRef = React.createRef();
+  componentDidMount() { this.apply(); this.fitAll(); if (document.fonts) document.fonts.ready.then(() => this.fitAll()); window.addEventListener('resize', () => this.fitAll()); }
+  componentDidUpdate() { this.apply(); this.fitAll(); }
+  apply() {
+    const r = this.rootRef.current; if (!r) return;
+    const q = z => r.querySelector('[data-zone="' + z + '"]');
+    const w = this.props.bandWhite ?? false;
+    q('band').style.background = w ? '#FFFFFF' : '#000000'; q('band').style.color = w ? '#000000' : '#FFFFFF'; q('band').style.borderTop = w ? '1px solid rgba(0,0,0,.18)' : '0';
+    q('photo').style.filter = (this.props.blackAndWhite ?? true) ? 'grayscale(1)' : 'none';
+  }
+  fitAll() {
+    const r = this.rootRef.current; if (!r) return;
+    r.querySelectorAll('[data-fit]').forEach(h => {
+      const p = h.parentElement, cs = getComputedStyle(p);
+      const box = p.clientWidth - parseFloat(cs.paddingLeft) - parseFloat(cs.paddingRight); if (box <= 0) return;
+      if (!h.dataset.max) h.dataset.max = parseFloat(getComputedStyle(h).fontSize);
+      const probe = document.createElement('span'); probe.style.cssText = 'position:absolute;visibility:hidden;white-space:nowrap;font:inherit;letter-spacing:inherit';
+      const nowrap = getComputedStyle(h).whiteSpace === 'nowrap';
+      const words = h.textContent.trim().split(/\s+/); probe.textContent = nowrap ? words.join(' ') : words.reduce((a, b) => b.length > a.length ? b : a, '');
+      h.appendChild(probe); let s = +h.dataset.max; h.style.fontSize = s + 'px';
+      while (s > 20 && probe.getBoundingClientRect().width > box) { s -= 2; h.style.fontSize = s + 'px'; }
+      probe.remove();
+    });
+  }
+  renderVals() { return { rootRef: this.rootRef }; }
+}
+</script>
+</body>
+</html>

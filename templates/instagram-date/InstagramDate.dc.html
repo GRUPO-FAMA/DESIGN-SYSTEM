@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<!-- @template name="Instagram fecha 4:5" description="1080×1350 · la fecha como titular gigante (casting, openday) · negro por defecto · sin foto" -->
+<helmet><script src="./ds-base.js"></script><style>body{margin:0;background:#F1F1F1}</style></helmet>
+<div ref="{{ rootRef }}" style="width:1080px;height:1350px;background:#000000;color:#FFFFFF;position:relative;overflow:hidden;font-family:Roboto,system-ui,sans-serif">
+<div style="position:absolute;left:108px;right:108px;top:108px;bottom:108px;display:flex;flex-direction:column;justify-content:space-between">
+<div style="display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:24px;padding-bottom:24px;border-bottom:1px solid currentColor"><span style="font:500 16px/1 Roboto,system-ui,sans-serif;text-transform:uppercase;letter-spacing:0.26em;opacity:.7">Próximo casting</span><img data-zone="logo" src="../../assets/logo/svg/fama-academy-horizontal-white.svg" alt="FAMA Academy" style="height:22px"><span style="font:500 16px/1 Roboto,system-ui,sans-serif;text-transform:uppercase;letter-spacing:0.26em;opacity:.7;text-align:right">Madrid</span></div>
+<div><div data-fit="1" style="font:800 300px/0.8 Syne,Montserrat,system-ui,sans-serif;text-transform:uppercase;letter-spacing:-0.07em;white-space:nowrap">12 OCT</div><div style="font:300 44px/1.2 'Space Grotesk',Montserrat,system-ui,sans-serif;text-transform:uppercase;letter-spacing:0.14em;margin-top:40px">Casting abierto</div></div>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:end;border-top:1px solid currentColor;padding-top:28px"><div style="display:flex;flex-direction:column;gap:12px"><span style="font:500 15px/1 Roboto,system-ui,sans-serif;text-transform:uppercase;letter-spacing:0.26em;opacity:.7">Hora y lugar</span><span style="font:400 22px/1.5 Roboto,system-ui,sans-serif">18:00 h · Calle de Serrano, Madrid</span></div><div style="display:flex;flex-direction:column;gap:12px"><span style="font:500 15px/1 Roboto,system-ui,sans-serif;text-transform:uppercase;letter-spacing:0.26em;opacity:.7">Requisitos</span><span style="font:400 22px/1.5 Roboto,system-ui,sans-serif">14 – 24 años · Sin experiencia<br>Inscripción en famaacademy.es</span></div></div>
+</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1080,&quot;height&quot;:1350},&quot;white&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Layout&quot;}}">
+class Component extends DCLogic {
+  rootRef = React.createRef();
+  componentDidMount() { this.apply(); if (document.fonts) document.fonts.ready.then(() => this.fitAll()); }
+  componentDidUpdate() { this.apply(); this.fitAll(); }
+  apply() {
+    const r = this.rootRef.current; if (!r) return;
+    const inverse = this.props.white ?? false;
+    r.style.background = inverse ? '#FFFFFF' : '#000000'; r.style.color = inverse ? '#000000' : '#FFFFFF';
+    r.querySelector('[data-zone="logo"]').src = '../../assets/logo/svg/' + (inverse ? 'fama-academy-horizontal-black.svg' : 'fama-academy-horizontal-white.svg');
+    this.fitAll();
+  }
+
+  fitAll() {
+    const r = this.rootRef.current; if (!r) return;
+    r.querySelectorAll('[data-fit]').forEach(h => {
+      const p = h.parentElement, cs = getComputedStyle(p);
+      const box = p.clientWidth - parseFloat(cs.paddingLeft) - parseFloat(cs.paddingRight); if (box <= 0) return;
+      if (!h.dataset.max) h.dataset.max = parseFloat(getComputedStyle(h).fontSize);
+      const probe = document.createElement('span'); probe.style.cssText = 'position:absolute;visibility:hidden;white-space:nowrap;font:inherit;letter-spacing:inherit';
+      const nowrap = getComputedStyle(h).whiteSpace === 'nowrap';
+      const words = h.textContent.trim().split(/\s+/); probe.textContent = nowrap ? words.join(' ') : words.reduce((a, b) => b.length > a.length ? b : a, '');
+      h.appendChild(probe); let s = +h.dataset.max; h.style.fontSize = s + 'px';
+      while (s > 20 && probe.getBoundingClientRect().width > box) { s -= 2; h.style.fontSize = s + 'px'; }
+      probe.remove();
+    });
+  }
+  renderVals() { return { rootRef: this.rootRef }; }
+}
+</script>
+</body>
+</html>

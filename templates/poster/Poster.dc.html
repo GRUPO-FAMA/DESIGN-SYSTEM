@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<!-- @template name="Poster A3" description="297×420 mm · giant date + Syne headline · B/W photo · details · stacked logo · 10% margins" -->
+<helmet><script src="./ds-base.js"></script><script src="../shared/image-slot.js"></script><style>body{margin:0;background:#F1F1F1}</style></helmet>
+<div ref="{{ rootRef }}" style="width:1123px;height:1587px;background:#FFFFFF;color:#000000;position:relative;overflow:hidden;font-family:Roboto,system-ui,sans-serif">
+<div style="position:absolute;left:112px;right:112px;top:159px;bottom:159px;display:grid;grid-template-columns:minmax(0,1fr);grid-template-rows:auto auto 1fr auto;gap:40px">
+<div style="display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:24px;padding-bottom:20px;border-bottom:1px solid currentColor"><span style="font:500 15px/1 Roboto,system-ui,sans-serif;text-transform:uppercase;letter-spacing:0.26em;opacity:.7">Nº 01 · Otoño – Invierno 2026</span><img data-zone="logo-h" src="../../assets/logo/svg/fama-academy-horizontal-black.svg" alt="FAMA Academy" style="height:20px"><span style="font:500 15px/1 Roboto,system-ui,sans-serif;text-transform:uppercase;letter-spacing:0.26em;opacity:.7;text-align:right">Madrid · Barcelona</span></div>
+<div><div data-fit="1" style="font:800 260px/0.8 Syne,Montserrat,system-ui,sans-serif;text-transform:uppercase;letter-spacing:-0.07em;white-space:nowrap">12 OCT</div><div style="display:flex;justify-content:space-between;align-items:flex-end;gap:32px;margin-top:28px"><div style="font:800 64px/0.86 Syne,Montserrat,system-ui,sans-serif;text-transform:uppercase;letter-spacing:-0.05em" data-fit="1">Casting abierto</div><span style="font:300 28px/1 'Space Grotesk',Montserrat,system-ui,sans-serif;text-transform:uppercase;letter-spacing:0.14em;white-space:nowrap">Madrid</span></div></div>
+<div data-zone="photo" style="position:relative;min-height:0;filter:grayscale(1)"><image-slot id="poster-photo" shape="rect" placeholder="Fotografía editorial · 3:2"></image-slot></div>
+<div style="display:grid;grid-template-columns:1fr 1fr auto;gap:40px;align-items:end;padding-top:28px;border-top:1px solid currentColor">
+<div style="display:flex;flex-direction:column;gap:12px"><span style="font:500 14px/1 Roboto,system-ui,sans-serif;text-transform:uppercase;letter-spacing:0.26em;opacity:.7">Fecha y lugar</span><span style="font:400 20px/1.5 Roboto,system-ui,sans-serif">12 de octubre de 2026 · 18:00 h<br>Calle de Serrano, Madrid</span></div>
+<div style="display:flex;flex-direction:column;gap:12px"><span style="font:500 14px/1 Roboto,system-ui,sans-serif;text-transform:uppercase;letter-spacing:0.26em;opacity:.7">Requisitos</span><span style="font:400 20px/1.5 Roboto,system-ui,sans-serif">14 – 24 años · Sin experiencia<br>Inscripción en famaacademy.es</span></div>
+<img data-zone="mark" src="../../assets/logo/svg/fama-academy-mark-black.svg" alt="" style="height:64px">
+</div>
+</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1123,&quot;height&quot;:1587},&quot;inverse&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Layout&quot;},&quot;blackAndWhite&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Photo&quot;}}">
+class Component extends DCLogic {
+  rootRef = React.createRef();
+  componentDidMount() { this.apply(); if (document.fonts) document.fonts.ready.then(() => this.fitAll()); }
+  componentDidUpdate() { this.apply(); this.fitAll(); }
+  apply() {
+    const r = this.rootRef.current; if (!r) return;
+    const inverse = this.props.inverse ?? false;
+    const bw = this.props.blackAndWhite ?? true;
+    r.style.background = inverse ? '#000000' : '#FFFFFF';
+    r.style.color = inverse ? '#FFFFFF' : '#000000';
+    r.querySelector('[data-zone="photo"]').style.filter = bw ? 'grayscale(1)' : 'none';
+    const base = '../../assets/logo/svg/';
+    r.querySelector('[data-zone="logo-h"]').src = base + (inverse ? 'fama-academy-horizontal-white.svg' : 'fama-academy-horizontal-black.svg');
+    r.querySelector('[data-zone="mark"]').src = base + (inverse ? 'fama-academy-mark-white.svg' : 'fama-academy-mark-black.svg');
+    this.fitAll();
+  }
+
+  fitAll() {
+    const r = this.rootRef.current; if (!r) return;
+    r.querySelectorAll('[data-fit]').forEach(h => {
+      const p = h.parentElement, cs = getComputedStyle(p);
+      const box = p.clientWidth - parseFloat(cs.paddingLeft) - parseFloat(cs.paddingRight); if (box <= 0) return;
+      if (!h.dataset.max) h.dataset.max = parseFloat(getComputedStyle(h).fontSize);
+      const probe = document.createElement('span'); probe.style.cssText = 'position:absolute;visibility:hidden;white-space:nowrap;font:inherit;letter-spacing:inherit';
+      const nowrap = getComputedStyle(h).whiteSpace === 'nowrap';
+      const words = h.textContent.trim().split(/\s+/); probe.textContent = nowrap ? words.join(' ') : words.reduce((a, b) => b.length > a.length ? b : a, '');
+      h.appendChild(probe); let s = +h.dataset.max; h.style.fontSize = s + 'px';
+      while (s > 20 && probe.getBoundingClientRect().width > box) { s -= 2; h.style.fontSize = s + 'px'; }
+      probe.remove();
+    });
+  }
+  renderVals() { return { rootRef: this.rootRef }; }
+}
+</script>
+</body>
+</html>

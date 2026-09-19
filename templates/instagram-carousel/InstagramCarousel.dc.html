@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<!-- @template name="Instagram carrusel 4:5" description="Portada + 3 interiores + cierre 1080×1350 · numeración 01/05 · portada negra con Syne, interiores blancos (Space Grotesk 500 + foto 4:3), cierre negro con statement y botón" -->
+<helmet><script src="./ds-base.js"></script><script src="../shared/image-slot.js"></script><style>body{margin:0;background:#F1F1F1}</style></helmet>
+<div ref="{{ rootRef }}" style="display:flex;gap:40px;padding:40px;width:max-content;font-family:Roboto,system-ui,sans-serif">
+<div data-zone="cover" data-screen-label="01" style="width:1080px;height:1350px;background:#000000;color:#FFFFFF;position:relative;overflow:hidden;flex:0 0 auto"><div style="position:absolute;left:108px;right:108px;top:108px;bottom:108px;display:flex;flex-direction:column;justify-content:space-between">
+<div style="display:flex;justify-content:space-between;align-items:center"><img data-zone="logo-cover" src="../../assets/logo/svg/fama-academy-horizontal-white.svg" alt="FAMA Academy" style="height:24px"><span style="font:500 16px/1 Roboto,system-ui,sans-serif;text-transform:uppercase;letter-spacing:0.26em;opacity:.7">01 / 05</span></div>
+<div><span style="display:inline-block;font:500 16px/1 Roboto,system-ui,sans-serif;text-transform:uppercase;letter-spacing:0.26em;border-top:1px solid currentColor;padding-top:14px;opacity:.7">Método FAMA</span><div style="font:800 120px/0.86 Syne,Montserrat,system-ui,sans-serif;text-transform:uppercase;letter-spacing:-0.05em;margin-top:36px" data-fit="1">Tres pilares</div><div style="font:300 40px/1.2 'Space Grotesk',Montserrat,system-ui,sans-serif;text-transform:uppercase;letter-spacing:0.14em;margin-top:28px">Para ser el modelo que las marcas demandan</div></div>
+<div style="display:flex;justify-content:space-between;align-items:flex-end"><span style="font:500 16px/1 Roboto,system-ui,sans-serif;text-transform:uppercase;letter-spacing:0.26em">Desliza →</span><img data-zone="mark-cover" src="../../assets/logo/svg/fama-academy-mark-white.svg" alt="" style="height:44px"></div></div></div>
+<div data-screen-label="02" style="width:1080px;height:1350px;background:#FFFFFF;color:#000000;position:relative;overflow:hidden;flex:0 0 auto"><div style="position:absolute;left:108px;right:108px;top:108px;bottom:108px;display:grid;grid-template-columns:minmax(0,1fr);grid-template-rows:auto 1fr auto;gap:40px">
+<div style="display:flex;justify-content:space-between;align-items:center"><span style="font:500 16px/1 Roboto,system-ui,sans-serif;text-transform:uppercase;letter-spacing:0.26em;opacity:.7">Método FAMA</span><span style="font:500 16px/1 Roboto,system-ui,sans-serif;text-transform:uppercase;letter-spacing:0.26em;opacity:.7">02 / 05</span></div>
+<div data-zone="photo-2" style="position:relative;min-height:0;filter:grayscale(1)"><image-slot id="ig-car-photo-2" shape="rect" placeholder="Fotografía 4:3"></image-slot></div>
+<div style="display:grid;grid-template-columns:auto minmax(0,1fr);gap:28px;align-items:start;border-top:1px solid currentColor;padding-top:28px;min-width:0"><span style="font:300 40px/1 'Space Grotesk',Montserrat,system-ui,sans-serif;letter-spacing:0.1em">01</span><div><div style="font:500 40px/1.05 'Space Grotesk',Montserrat,system-ui,sans-serif;text-transform:uppercase;letter-spacing:0.02em;white-space:normal;overflow-wrap:normal;min-width:0" data-fit="1">Una conexión exponencial</div><p style="margin:16px 0 0;font:400 22px/1.5 Roboto,system-ui,sans-serif;max-width:40ch">Un profundo tejido de alianzas y vínculos que te permitirán colaboraciones con marcas y revistas de renombre.</p></div></div></div></div>
+<div data-screen-label="03" style="width:1080px;height:1350px;background:#FFFFFF;color:#000000;position:relative;overflow:hidden;flex:0 0 auto"><div style="position:absolute;left:108px;right:108px;top:108px;bottom:108px;display:grid;grid-template-columns:minmax(0,1fr);grid-template-rows:auto 1fr auto;gap:40px">
+<div style="display:flex;justify-content:space-between;align-items:center"><span style="font:500 16px/1 Roboto,system-ui,sans-serif;text-transform:uppercase;letter-spacing:0.26em;opacity:.7">Método FAMA</span><span style="font:500 16px/1 Roboto,system-ui,sans-serif;text-transform:uppercase;letter-spacing:0.26em;opacity:.7">03 / 05</span></div>
+<div data-zone="photo-3" style="position:relative;min-height:0;filter:grayscale(1)"><image-slot id="ig-car-photo-3" shape="rect" placeholder="Fotografía 4:3"></image-slot></div>
+<div style="display:grid;grid-template-columns:auto minmax(0,1fr);gap:28px;align-items:start;border-top:1px solid currentColor;padding-top:28px;min-width:0"><span style="font:300 40px/1 'Space Grotesk',Montserrat,system-ui,sans-serif;letter-spacing:0.1em">02</span><div><div style="font:500 40px/1.05 'Space Grotesk',Montserrat,system-ui,sans-serif;text-transform:uppercase;letter-spacing:0.02em;white-space:normal;overflow-wrap:normal;min-width:0" data-fit="1">Una formación integral</div><p style="margin:16px 0 0;font:400 22px/1.5 Roboto,system-ui,sans-serif;max-width:40ch">Los mejores en la industria dedicados a ofrecerte las herramientas más reconocidas para asegurar tu éxito.</p></div></div></div></div>
+
+<div data-screen-label="04" style="width:1080px;height:1350px;background:#FFFFFF;color:#000000;position:relative;overflow:hidden;flex:0 0 auto"><div style="position:absolute;left:108px;right:108px;top:108px;bottom:108px;display:grid;grid-template-columns:minmax(0,1fr);grid-template-rows:auto 1fr auto;gap:40px">
+<div style="display:flex;justify-content:space-between;align-items:center"><span style="font:500 16px/1 Roboto,system-ui,sans-serif;text-transform:uppercase;letter-spacing:0.26em;opacity:.7">Método FAMA</span><span style="font:500 16px/1 Roboto,system-ui,sans-serif;text-transform:uppercase;letter-spacing:0.26em;opacity:.7">04 / 05</span></div>
+<div data-zone="photo-4" style="position:relative;min-height:0;filter:grayscale(1)"><image-slot id="ig-car-photo-4" shape="rect" placeholder="Fotografía 4:3"></image-slot></div>
+<div style="display:grid;grid-template-columns:auto minmax(0,1fr);gap:28px;align-items:start;border-top:1px solid currentColor;padding-top:28px;min-width:0"><span style="font:300 40px/1 'Space Grotesk',Montserrat,system-ui,sans-serif;letter-spacing:0.1em">03</span><div><div style="font:500 40px/1.05 'Space Grotesk',Montserrat,system-ui,sans-serif;text-transform:uppercase;letter-spacing:0.02em;white-space:normal;overflow-wrap:normal;min-width:0" data-fit="1">Visibilidad y representación</div><p style="margin:16px 0 0;font:400 22px/1.5 Roboto,system-ui,sans-serif;max-width:40ch">Al terminar entras en la bolsa de trabajo de FAMA y participas en el desfile final. Los perfiles con mayor proyección pasan a FAMA Management.</p></div></div></div></div>
+<div data-zone="close" data-screen-label="05" style="width:1080px;height:1350px;background:#000000;color:#FFFFFF;position:relative;overflow:hidden;flex:0 0 auto"><div style="position:absolute;left:108px;right:108px;top:108px;bottom:108px;display:flex;flex-direction:column;justify-content:space-between">
+<div style="display:flex;justify-content:space-between;align-items:center"><img data-zone="logo-close" src="../../assets/logo/svg/fama-academy-horizontal-white.svg" alt="FAMA Academy" style="height:24px"><span style="font:500 16px/1 Roboto,system-ui,sans-serif;text-transform:uppercase;letter-spacing:0.26em;opacity:.7">05 / 05</span></div>
+<div><span style="display:inline-block;font:500 16px/1 Roboto,system-ui,sans-serif;text-transform:uppercase;letter-spacing:0.26em;border-top:1px solid currentColor;padding-top:14px;opacity:.7">Da el paso</span><div style="font:300 64px/1.15 'Space Grotesk',Montserrat,system-ui,sans-serif;text-transform:uppercase;letter-spacing:0.02em;margin-top:36px;max-width:16ch">Las agencias fichan a quien <b style="font:800 1em/1 Syne,Montserrat,system-ui,sans-serif;letter-spacing:-0.05em">ya llega preparado</b>.</div><div style="font:300 32px/1.3 'Space Grotesk',Montserrat,system-ui,sans-serif;text-transform:uppercase;letter-spacing:0.14em;margin-top:32px;max-width:24ch">Te formamos, te preparamos el book y te representamos.</div></div>
+<div style="display:flex;justify-content:space-between;align-items:flex-end;gap:32px"><div style="display:flex;flex-direction:column;gap:14px"><span style="display:inline-flex;align-items:center;justify-content:center;height:72px;padding:0 44px;border:1px solid #FFFFFF;background:#FFFFFF;color:#000000;font:500 18px/1 Roboto,system-ui,sans-serif;text-transform:uppercase;letter-spacing:0.28em;white-space:nowrap;align-self:flex-start">Solicitar plaza</span><span style="font:400 22px/1.4 Roboto,system-ui,sans-serif;opacity:.8">Enlace en la bio · famaacademy.es</span></div><img data-zone="mark-close" src="../../assets/logo/svg/fama-academy-mark-white.svg" alt="" style="height:44px"></div></div></div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:5680,&quot;height&quot;:1430},&quot;whiteCover&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Layout&quot;},&quot;blackAndWhite&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Photo&quot;}}">
+class Component extends DCLogic {
+  rootRef = React.createRef();
+  componentDidMount() { this.apply(); this.fitAll(); if (document.fonts) document.fonts.ready.then(() => this.fitAll()); window.addEventListener('resize', () => this.fitAll()); }
+  componentDidUpdate() { this.apply(); this.fitAll(); }
+  apply() {
+    const r = this.rootRef.current; if (!r) return;
+    const bw = this.props.blackAndWhite ?? true;
+    const whiteCover = this.props.whiteCover ?? false;
+    r.querySelectorAll('[data-zone^="photo-"]').forEach(p => p.style.filter = bw ? 'grayscale(1)' : 'none');
+    const c = r.querySelector('[data-zone="cover"]'); c.style.background = whiteCover ? '#FFFFFF' : '#000000'; c.style.color = whiteCover ? '#000000' : '#FFFFFF';
+    const base = '../../assets/logo/svg/';
+    r.querySelector('[data-zone="logo-cover"]').src = base + (whiteCover ? 'fama-academy-horizontal-black.svg' : 'fama-academy-horizontal-white.svg');
+    r.querySelector('[data-zone="mark-cover"]').src = base + (whiteCover ? 'fama-academy-mark-black.svg' : 'fama-academy-mark-white.svg');
+    const k = r.querySelector('[data-zone="close"]'); if (k) { k.style.background = whiteCover ? '#FFFFFF' : '#000000'; k.style.color = whiteCover ? '#000000' : '#FFFFFF'; }
+  }
+
+  fitAll() {
+    const r = this.rootRef.current; if (!r) return;
+    r.querySelectorAll('[data-fit]').forEach(h => {
+      const p = h.parentElement, cs = getComputedStyle(p);
+      const box = p.clientWidth - parseFloat(cs.paddingLeft) - parseFloat(cs.paddingRight); if (box <= 0) return;
+      if (!h.dataset.max) h.dataset.max = parseFloat(getComputedStyle(h).fontSize);
+      const probe = document.createElement('span'); probe.style.cssText = 'position:absolute;visibility:hidden;white-space:nowrap;font:inherit;letter-spacing:inherit';
+      const nowrap = getComputedStyle(h).whiteSpace === 'nowrap';
+      const words = h.textContent.trim().split(/\s+/); probe.textContent = nowrap ? words.join(' ') : words.reduce((a, b) => b.length > a.length ? b : a, '');
+      h.appendChild(probe); let s = +h.dataset.max; h.style.fontSize = s + 'px';
+      while (s > 20 && probe.getBoundingClientRect().width > box) { s -= 2; h.style.fontSize = s + 'px'; }
+      probe.remove();
+    });
+  }
+  renderVals() { return { rootRef: this.rootRef }; }
+}
+</script>
+</body>
+</html>
