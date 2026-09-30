@@ -23,18 +23,35 @@
 .topics h3{font:600 clamp(16px,1.3vw,20px)/1.15 var(--font-display-secondary);text-transform:uppercase;letter-spacing:.04em;margin:0 0 10px}
 .topics p{margin:0;font:var(--type-small);color:var(--fg3);line-height:1.6}
 @media (max-width:1100px){.feat{grid-template-columns:minmax(0,1fr)}.posts li a{grid-template-columns:minmax(0,1fr) auto}.posts li a .lbl{grid-column:1/-1}.topics{grid-template-columns:1fr 1fr}}
+/* acento-negro */.sec.pad:not(.band)+.sec.pad:not(.band){padding-top:0}/* blog-arm */.btitle{display:block;padding-bottom:clamp(80px,10vw,140px)!important}.bt-h{min-width:0}.bt-grid,.paso4{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);column-gap:clamp(40px,6vw,120px);align-items:start;margin-top:clamp(56px,7vw,112px)}.bt-light,.paso4 .light{margin:0!important;font:300 clamp(20px,1.9vw,30px)/1.25 var(--font-display-secondary)!important;max-width:24ch;text-transform:uppercase;letter-spacing:.06em}.bt-light b,.paso4 .light b{font-weight:600;letter-spacing:.04em}.bt-right p{margin:0;font:400 17px/1.7 var(--font-body);color:#D0D0D0;max-width:60ch}.btitle .cats{margin-top:clamp(56px,7vw,96px);padding-top:8px;border-top:1px solid var(--line)}.paso4 .body{margin:0;font:400 17px/1.7 var(--font-body);color:var(--fg3)!important;max-width:60ch}.paso4 .acts{display:flex;flex-wrap:wrap;gap:16px}.feat h3{font:600 clamp(22px,2.4vw,38px)/1.12 var(--font-display-secondary)!important;letter-spacing:.02em!important;text-transform:uppercase;max-width:22ch}.topics a{display:flex!important;flex-direction:column;height:100%}.cclose .cc-grid{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);column-gap:clamp(40px,6vw,120px);align-items:end;margin-top:32px}.cclose .stmt{margin:0}.cclose .cc-side{display:flex;flex-direction:column;gap:28px}.cclose .cc-side p{margin:0;font:400 17px/1.7 var(--font-body);color:var(--fg3);max-width:40ch}.nl{display:flex;gap:0;width:100%}.nl input{flex:1 1 auto;min-width:0;height:60px;border:1px solid #000;border-right:0;padding:0 20px;font:400 16px/1 var(--font-body);background:transparent;color:#000}.nl input:focus{outline:none;border-color:#000;background:#F1F1F1}.nl .btn{flex:0 0 auto}@media (max-width:809px){.bt-grid,.paso4,.cclose .cc-grid{grid-template-columns:minmax(0,1fr);row-gap:28px}.nl{flex-direction:column;gap:12px}.nl input{border-right:1px solid #000}}
+/* Blog categorías · mobile: una fila deslizable, sin subrayados sueltos */
+@media (max-width:700px){
+.cats{display:flex!important;flex-wrap:nowrap!important;overflow-x:auto;gap:8px!important;margin-left:calc(var(--m)*-1)!important;margin-right:calc(var(--m)*-1)!important;padding:20px var(--m)!important;border-top:1px solid var(--line)!important;border-bottom:1px solid var(--line)!important;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.cats::-webkit-scrollbar{display:none}
+.cats a{flex:0 0 auto!important;display:inline-flex!important;align-items:center;height:40px!important;padding:0 16px!important;border:1px solid rgba(0,0,0,.18)!important;border-bottom:1px solid rgba(0,0,0,.18)!important;white-space:nowrap!important;letter-spacing:.18em!important;font-size:10px!important;margin:0!important}
+.cats a::after{display:none!important}
+.cats a[aria-current="page"]{background:#000!important;color:#fff!important;border-color:#000!important}
+}
+
+@media (max-width:700px){
+.btitle{padding-bottom:0!important}
+.btitle .cats{margin:40px 0 0!important;padding:16px 0!important}
+.btitle+.sec.pad{padding-top:56px!important}
+}
 </style>
 <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"EducationalOrganization","@id":"https://famaacademy.es/#org","name":"FAMA Academy","url":"https://famaacademy.es","aggregateRating":{"@type":"AggregateRating","ratingValue":"4.9","bestRating":"5","ratingCount":"1638","reviewCount":"1638"}},{"@type":"Blog","@id":"https://famaacademy.es/blog/#blog","name":"Blog de FAMA Academy","url":"https://famaacademy.es/blog/","inLanguage":"es","publisher":{"@id":"https://famaacademy.es/#org"},"blogPost":[{"@type":"BlogPosting","headline":"Errores típicos al empezar como modelo (y cómo evitarlos)","url":"https://famaacademy.es/errores-al-empezar-como-modelo/","datePublished":"2026-09-02","author":{"@type":"Person","name":"Ángel Borondo"}},{"@type":"BlogPosting","headline":"Cómo es el primer casting de modelo: qué esperar y cómo prepararte","url":"https://famaacademy.es/primer-casting-de-modelo/","datePublished":"2026-09-02","author":{"@type":"Person","name":"Ángel Borondo"}},{"@type":"BlogPosting","headline":"Cuánto gana un modelo en España (2026): cachés reales por tipo de trabajo","url":"https://famaacademy.es/cuanto-gana-un-modelo-en-espana-2026-caches-reales-por-tipo-de-trabajo/","datePublished":"2026-07-24","author":{"@type":"Person","name":"Ángel Borondo"}},{"@type":"BlogPosting","headline":"Requisitos para ser modelo en España (2026): edad, altura y lo que de verdad piden","url":"https://famaacademy.es/requisitos-para-ser-modelo-en-espana-2026-edad-altura-y-lo-que-de-verdad-piden/","datePublished":"2026-07-24","author":{"@type":"Person","name":"Ángel Borondo"}}]},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"FAMA Academy","item":"https://famaacademy.es/"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://famaacademy.es/blog/"}]}]}</script></head><body>
 <nav id="nav" data-cta="MasterMadrid.html#convocatorias" data-label="Solicitar plaza"></nav>
 
 <nav class="crumbs lbl dim" aria-label="Migas de pan"><a href="Home.html">FAMA Academy</a><span>/</span><span aria-current="page">Blog</span></nav>
-<section class="title band nohero">
-<span class="lbl dim vert r">Aprende a ser modelo</span>
-<div><h1 class="syne r" data-fit="200">Blog</h1>
-<div class="light sub r">Guías y consejos para empezar en el modelaje</div>
-<div class="title-meta r"><div class="body"><p>Requisitos, castings, book, sueldos y cómo elegir escuela. Escrito por el equipo de FAMA Academy, escuela de modelos en Madrid y Barcelona, a partir de lo que vemos cada día en castings, sesiones y pasarela.</p></div></div>
+<section class="title twhite ltpad btitle">
+<span class="lbl dim r" style="display:block;margin-bottom:32px">Aprende a ser modelo</span>
+<div class="bt-h"><h1 class="syne r" data-fit="200">Blog</h1></div>
+<div class="bt-grid">
+<div class="bt-left r"><p class="light bt-light"><b>Guías y consejos para empezar en el modelaje</b></p></div>
+<div class="bt-right r"><p>Requisitos, castings, book, sueldos y cómo elegir escuela. Escrito por el equipo de FAMA Academy, escuela de modelos en Madrid y Barcelona, a partir de lo que vemos cada día en castings, sesiones y pasarela.</p></div>
+</div>
 <nav class="cats r" aria-label="Categorías"><a href="#" aria-current="page">Todo</a><a href="https://famaacademy.es/category/como-ser-modelo/">Cómo ser modelo</a><a href="https://famaacademy.es/category/castings/">Castings</a><a href="https://famaacademy.es/category/escuela-de-modelos/">Escuela de modelos</a><a href="https://famaacademy.es/category/autoestima-y-confianza/">Autoestima y confianza</a></nav>
-</div></section>
+</section>
 
 <section class="sec pad">
 <div class="head r"><span class="num">01</span><h2 class="syne h2 sy">Último artículo</h2><span class="lbl dim">2 de septiembre de 2026</span></div>
@@ -68,13 +85,13 @@
 </div>
 </section>
 
-<section class="sec pad band">
+<section class="sec pad">
 <div class="head r"><span class="num">04</span><h2 class="syne h2 sy">Da el paso</h2><span class="lbl dim">Openday · Máster</span></div>
-<div class="two" style="margin-top:clamp(48px,6vw,96px)"><div class="r"><p class="light" style="margin:0;max-width:26ch">Leer ayuda. Formarse cambia el resultado.</p></div>
-<div class="r"><p class="body" style="color:#D0D0D0">Si después de leer quieres saber si vales para modelo, el Openday son tres horas con clase real y evaluación honesta. Si ya lo tienes claro, el Máster Modelo Profesional te prepara en tres meses con book incluido.</p><div class="acts" style="margin-top:32px"><a class="btn solid" href="Openday.html">Reservar Openday</a><a class="btn" href="MasterMadrid.html" title="Escuela de modelos en Madrid">Máster · Madrid</a></div></div></div>
+<div class="two paso4" style="margin-top:clamp(48px,6vw,96px)"><div class="r"><p class="light"><b>Leer ayuda. Formarse cambia el resultado.</b></p></div>
+<div class="r"><p class="body">Si después de leer quieres saber si vales para modelo, el Openday son tres horas con clase real y evaluación honesta. Si ya lo tienes claro, el Máster Modelo Profesional te prepara en tres meses con book incluido.</p><div class="acts" style="margin-top:32px"><a class="btn solid" href="Openday.html">Reservar Openday</a><a class="btn" href="MasterMadrid.html" title="Escuela de modelos en Madrid">Máster · Madrid</a><a class="btn" href="MasterBarcelona.html" title="Escuela de modelos en Madrid">Máster · Barcelona</a></div></div></div>
 </section>
 
-<section class="close"><span class="lbl dim r">Newsletter</span><h2 class="stmt r" style="margin-top:32px"><b>Una guía</b> al mes, sin ruido</h2><p class="light r" style="margin-top:32px;max-width:40ch">Consejos prácticos para empezar en el modelaje y avisos de convocatorias y Openday.</p><form class="acts r" style="margin-top:40px" action="#" onsubmit="return false"><input type="email" placeholder="Tu email" aria-label="Tu email" style="flex:1 1 280px;height:60px;border:1px solid #000;padding:0 20px;font:var(--type-body);background:transparent"><button class="btn solid" type="submit">Suscribirme</button></form></section>
+
 
 <div class="sticky-cta" data-hide=".close"><a class="btn solid" href="Openday.html">Reservar Openday</a></div>
 <footer id="footer"></footer>

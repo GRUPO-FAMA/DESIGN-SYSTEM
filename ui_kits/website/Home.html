@@ -1,5 +1,5 @@
 <!-- @dsCard group="Website" viewport="1440x900" name="Web v2 — Home" subtitle="famaacademy.es v2 · alternado negro/blanco · 26 páginas enlazadas (menú → todas)" -->
-<!DOCTYPE html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>FAMA Academy · Escuela de modelos de alta gama en Madrid y Barcelona</title><meta name="description" content="Escuela de modelos en Madrid y Barcelona. Máster Modelo Profesional de 3 meses, intensivos de verano, Openday y cursos online. Transformamos personas reales en modelos profesionales."><link rel="canonical" href="https://famaacademy.es/"><meta property="og:type" content="website"><meta property="og:site_name" content="FAMA Academy"><meta property="og:locale" content="es_ES"><meta property="og:title" content="FAMA Academy · Escuela de modelos de alta gama en Madrid y Barcelona"><meta property="og:description" content="Escuela de modelos en Madrid y Barcelona. Máster Modelo Profesional de 3 meses, intensivos de verano, Openday y cursos online. Transformamos personas reales en modelos profesionales."><meta property="og:url" content="https://famaacademy.es/"><meta property="og:image" content="https://famaacademy.es/wp-content/uploads/2026/06/MON_4990-1.jpg"><meta name="twitter:card" content="summary_large_image"><link rel="stylesheet" href="../../styles.css"><link rel="stylesheet" href="site.css"><link rel="stylesheet" href="course.css">
+<!DOCTYPE html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>FAMA Academy · Escuela de modelos de alta gama en Madrid y Barcelona</title><link rel="preload" as="image" href="../../assets/photos/desfile-alumnos-fama-academy-agatha-ruiz-de-la-prada-madrid-2400.webp" imagesrcset="../../assets/photos/desfile-alumnos-fama-academy-agatha-ruiz-de-la-prada-madrid-1200.webp 1200w, ../../assets/photos/desfile-alumnos-fama-academy-agatha-ruiz-de-la-prada-madrid-2400.webp 2400w" imagesizes="100vw"><meta name="description" content="Escuela de modelos en Madrid y Barcelona. Máster Modelo Profesional de 3 meses, intensivos de verano, Openday y cursos online. Transformamos personas reales en modelos profesionales."><link rel="canonical" href="https://famaacademy.es/"><meta property="og:type" content="website"><meta property="og:site_name" content="FAMA Academy"><meta property="og:locale" content="es_ES"><meta property="og:title" content="FAMA Academy · Escuela de modelos de alta gama en Madrid y Barcelona"><meta property="og:description" content="Escuela de modelos en Madrid y Barcelona. Máster Modelo Profesional de 3 meses, intensivos de verano, Openday y cursos online. Transformamos personas reales en modelos profesionales."><meta property="og:url" content="https://famaacademy.es/"><meta property="og:image" content="https://famaacademy.es/wp-content/uploads/desfile-alumnos-fama-academy-agatha-ruiz-de-la-prada-madrid.webp"><meta name="twitter:card" content="summary_large_image"><link rel="stylesheet" href="../../styles.css"><link rel="stylesheet" href="site.css"><link rel="stylesheet" href="course.css">
 <style>
 :root{--m:10vw;--ease:cubic-bezier(.2,.6,.2,1);--line:rgba(255,255,255,.18);--bg:#000;--fg:#fff;--fg2:#F1F1F1;--fg3:#D0D0D0;--dim:#9A9A9A;--inv-bg:#fff;--inv-fg:#000;--inv-dim:#4A4A4A;--logo-inv:1}
 body{margin:0;background:var(--bg);color:var(--fg);font:var(--type-body);-webkit-font-smoothing:antialiased;overflow-x:hidden;transition:background .6s var(--ease),color .6s var(--ease)}
@@ -24,15 +24,15 @@ img,video{display:block}
 .dim{color:var(--dim)}
 .syne{font-family:var(--font-display);font-weight:800;text-transform:uppercase;letter-spacing:-.05em;line-height:.86;margin:0}
 .pic{position:relative;overflow:hidden;background:#111}
-.pic img{width:100%;height:100%;object-fit:cover;filter:grayscale(1);transition:transform 1.6s var(--ease),filter 1.2s var(--ease)}
-a:hover .pic img,.pic:hover img{transform:scale(1.03);filter:grayscale(0)}
+.pic img{width:100%;height:100%;object-fit:cover;transition:transform 1.6s var(--ease),filter 1.2s var(--ease)}
+a:hover .pic img,.pic:hover img{transform:scale(1.03);filter:none}
 .curtain{position:fixed;inset:0;background:#000;z-index:100;display:grid;place-items:center;transition:transform 1.2s cubic-bezier(.7,0,.2,1)}
 .curtain.up{transform:translateY(-100%)}
 .curtain img{height:40px;opacity:0;animation:fadeIn 1s .2s var(--ease) forwards}
 @keyframes fadeIn{to{opacity:1}}
 nav.hidden{transform:translateY(-100%)}
 .hero{height:100vh;min-height:640px;position:relative;overflow:hidden}
-.hero video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:grayscale(1)}
+.hero video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 .hero .cap{position:absolute;left:var(--m);right:var(--m);bottom:40px;display:flex;justify-content:space-between;gap:24px;color:#fff}
 .masthead{display:grid;grid-template-columns:1fr auto 1fr;gap:24px;align-items:center;padding:28px var(--m);border-bottom:1px solid var(--line)}
 .masthead .lbl:last-child{text-align:right}
@@ -114,7 +114,7 @@ footer .mark img{height:72px;width:auto}
 .r{opacity:0;transform:translateY(32px);transition:opacity 1.3s var(--ease),transform 1.3s var(--ease)}.r.in{opacity:1;transform:none}
 @media (max-width:1100px){.masthead{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}.masthead>:nth-child(2){display:none}.title{grid-template-columns:minmax(0,1fr)}.vert{writing-mode:horizontal-tb;transform:none}.title-meta,.metodo,.look,.date .row,.mani,.look .sticky,.metodo .sticky{position:static}.look .pic.off{width:100%}.marcas ul{grid-template-columns:repeat(2,1fr)}.marcas li:nth-child(5n){border-right:1px solid var(--line)}.marcas li:nth-child(2n){border-right:0}}
 [data-fit],.title>*,.two>*,.look>*,.metodo>*,.mani>*{min-width:0}.ticker{overflow:hidden}.stmt{font:400 clamp(28px,4vw,64px)/1.1 var(--font-display-secondary);text-transform:uppercase;letter-spacing:0;margin:0;max-width:22ch;white-space:normal}.stmt b{font-family:var(--font-display);font-weight:800;letter-spacing:-.04em}.fama{font-family:var(--font-wordmark);font-weight:600;letter-spacing:.02em;text-transform:uppercase}.fama .lt{font-weight:300}.syne .fama{font-size:.88em}.stmt b.fama{font-family:var(--font-wordmark);font-weight:600;letter-spacing:.02em}.body+.btn,p+.btn,.light+.btn,ol+.btn{margin-top:32px}.stmt b{font-size:.9em}@media (max-width:1100px){}
-.hero .still{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:grayscale(1)}
+.hero .still{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 .title-meta .acts{display:flex;gap:16px;flex-wrap:nowrap}
 .sticky-cta .btn.solid{background:#000;color:#fff;border-color:#000}
 .title .kpis{border-color:rgba(255,255,255,.18)}.title .kpis div{border-right:0}
@@ -167,24 +167,113 @@ section.look,section.metodo{display:block}
 /* All numbered section heads in Syne; long titles smaller, wrapping */
 .head .h2{font:800 clamp(26px,3vw,48px)/.9 var(--font-display)!important;letter-spacing:-.04em!important;text-transform:uppercase;text-wrap:balance}.head .h2:not(.sy){font-size:clamp(20px,2.1vw,32px)!important;line-height:1!important;max-width:30ch}.head .h2 .fama{font-size:.88em}
 .close{padding-top:clamp(96px,12vw,200px)}
+
+/* Negro como acento: título, una sección fuerte (Modelos) y footer. Secciones blancas seguidas se separan solo por la línea fina del encabezado */
+.sec.pad:not(.band)+.sec.pad:not(.band){padding-top:0}
+/* hero-video */.hero .hv,.hero .still{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 30%}.hero .m-only{display:none}@media (max-width:809px){.hero .d-only{display:none}.hero .m-only{display:block}}/* mtw */.mtw{display:block}.mtw-h{min-width:0}.mtw-grid{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);column-gap:clamp(40px,6vw,120px);align-items:start;margin-top:clamp(56px,7vw,112px)}.mtw-left{display:flex;flex-direction:column;gap:32px;align-items:flex-start}.mtw-light{margin:0!important;font:300 clamp(20px,1.9vw,30px)/1.25 var(--font-display-secondary)!important;max-width:24ch;text-transform:uppercase;letter-spacing:.06em;color:#000!important}.mtw-light b{font-weight:600;letter-spacing:.04em}.mtw-right p{margin:0 0 32px;font:400 17px/1.7 var(--font-body);color:#4A4A4A!important;max-width:60ch}.mtw-right p b{color:#000!important;font-weight:500}.mtw-right .acts{display:flex;flex-wrap:wrap;gap:16px}.mtw .kpis{margin-top:clamp(64px,8vw,120px)}.mtw .kpis>div{display:flex;flex-direction:column;justify-content:flex-end}.mtw .kpis b{font-size:clamp(30px,3.2vw,52px);color:#000}@media (max-width:809px){.mtw-grid{grid-template-columns:minmax(0,1fr);row-gap:28px}}.mtw .kpis+*{margin-top:clamp(64px,8vw,120px)}/* hero-photo */.hero.hero-photo{height:100svh!important;min-height:560px}.hero-photo .still{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 32%;filter:none}.hero-photo .cap{flex-wrap:wrap;row-gap:8px}@media (max-width:809px){.hero-photo .still{object-position:50% 30%}}/* cap-ed */.hero .cap-ed{align-items:flex-end;bottom:clamp(32px,5vh,56px);text-shadow:0 1px 14px rgba(0,0,0,.6)}.cap-ed .ed{display:grid;gap:14px;max-width:min(560px,100%);border-top:1px solid rgba(255,255,255,.7);padding-top:18px}.cap-ed .ed-k{color:#fff}.cap-ed .ed-t{margin:0;font:300 clamp(20px,2vw,30px)/1.2 var(--font-display-secondary);text-transform:uppercase;letter-spacing:.06em;color:#fff;text-wrap:balance}.cap-ed .ed-c{font:400 14px/1.5 var(--font-body);color:#fff}.cap-ed .ed-r{color:#fff}@media (max-width:809px){.cap-ed .ed-r{display:none}.cap-ed .ed-t{font-size:20px}}@media (max-width:600px){.online-row{grid-template-columns:minmax(0,1fr)!important;gap:16px!important}.online-row>*{min-width:0}}
+/* NAV ALWAYS WHITE (25/09/2026): transparent only over a hero at the top; every other state is white with black marks. Menu panel white too. */
+nav#nav.scrolled,body:not(:has(header.hero)) nav#nav,html.menu-open nav#nav{background:#fff!important;color:#000!important;text-shadow:none!important;box-shadow:none!important;border-bottom:1px solid rgba(0,0,0,.12)!important}
+nav#nav.scrolled img,body:not(:has(header.hero)) nav#nav img,html.menu-open nav#nav img{filter:invert(1)!important}
+nav#nav.scrolled a,body:not(:has(header.hero)) nav#nav a,html.menu-open nav#nav a,nav#nav.scrolled button,body:not(:has(header.hero)) nav#nav button,html.menu-open nav#nav button,nav#nav.scrolled .menubtn,body:not(:has(header.hero)) nav#nav .menubtn,html.menu-open nav#nav .menubtn{color:#000!important;text-shadow:none!important}
+nav#nav.scrolled .mb-lines i,body:not(:has(header.hero)) nav#nav .mb-lines i,html.menu-open nav#nav .mb-lines i{background:#000!important}
+nav#nav.scrolled .btn,body:not(:has(header.hero)) nav#nav .btn,html.menu-open nav#nav .btn,nav#nav.scrolled .navbtn,body:not(:has(header.hero)) nav#nav .navbtn,html.menu-open nav#nav .navbtn{background:#000!important;color:#fff!important;border-color:#000!important}
+nav#nav.scrolled .btn:hover,body:not(:has(header.hero)) nav#nav .btn:hover,html.menu-open nav#nav .btn:hover,nav#nav.scrolled .navbtn:hover,body:not(:has(header.hero)) nav#nav .navbtn:hover,html.menu-open nav#nav .navbtn:hover{background:#fff!important;color:#000!important}
+.menu{background:#fff!important;color:#000!important}
+.menu a,.menu ul a,.menu button,.menu .lbl,.menu span{color:#000!important}
+.menu ul a:hover{opacity:.55}
+.menu img{filter:invert(1)!important}
+.menu .mb-lines i{background:#000!important}
+.menufoot,.menu ul li{border-color:rgba(0,0,0,.12)!important}
+.menu .btn{background:#000!important;color:#fff!important;border-color:#000!important}
+
+/* menu: no dividers between items */.menu ul li,.menu ul a{border:0!important;box-shadow:none!important}.menu ul li+li{border-top:0!important}.menu ul{gap:clamp(14px,2.2vh,22px)}
+
+/* mobile head: never split words; extra link goes on its own row */@media (max-width:1100px){.head .h2,.head h2{overflow-wrap:normal!important;word-break:normal!important;hyphens:none!important}.head{grid-template-columns:auto minmax(0,1fr)!important}.head>a:last-child{grid-column:1/-1!important;justify-self:start;margin-top:4px}}
+
+/* brands on mobile: no grid lines, uniform cells, optically equal logos */@media (max-width:1100px){.marcas ul{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:0!important;border:0!important}.marcas li{height:96px!important;border:0!important;box-shadow:none!important;display:grid;place-items:center;padding:0 12px}.marcas li:nth-child(n){border-right:0!important;border-bottom:0!important}.marcas img{width:auto!important;max-width:58%!important;max-height:30px!important;height:auto;object-fit:contain}}
+
+/* ===== HOME · MOBILE HARMONY (≤700px) ===== */
+@media (max-width:700px){
+/* rhythm: every section same vertical breathing */
+.sec.pad{padding-top:72px!important;padding-bottom:72px!important}
+.sec.pad:not(.band)+.sec.pad:not(.band){padding-top:0!important}
+.head{margin-bottom:0}
+.head+*{margin-top:40px!important}
+/* 01 Formación presencial: image first, single photo, then text */
+.lookgrid{display:flex!important;flex-direction:column;gap:32px!important}
+.lookgrid>.col{order:-1;display:block!important}
+.lookgrid>.col .pic{aspect-ratio:4/5!important;height:auto!important;margin:0!important}
+.lookgrid>.col .pic.off{display:none!important}
+.lookgrid .sticky{position:static!important}
+.lookgrid .big3{margin-bottom:16px}
+.lookgrid .light{max-width:none!important;margin-bottom:16px}
+.lookgrid .open{margin-top:32px}
+/* 02 Método: image a bit shorter, list tight */
+.metodogrid{gap:32px!important}
+.metodogrid>.pic{aspect-ratio:4/5!important;height:auto!important}
+.metodogrid .btn{width:100%}
+/* 05 Verano: stack — photo, then copy, button full width */
+.verano .date .row{display:flex!important;flex-direction:column;gap:28px!important}
+.verano .date .row>.pic{order:-1;width:100%!important;aspect-ratio:4/5!important;height:auto!important}
+.verano .date .row>.r{width:100%!important}
+.verano .date .row p{max-width:none!important}
+.verano .date .row .btn{width:100%;margin-top:8px}
+.verano .date .giant{margin-bottom:28px}
+.online-row{margin-top:56px!important;padding-top:32px;border-top:1px solid rgba(0,0,0,.12)}
+/* 03 Testimonios: swipe row instead of a 1.500px wall */
+.quotes{display:flex!important;overflow-x:auto;scroll-snap-type:x mandatory;gap:20px!important;margin-left:calc(var(--m)*-1);margin-right:calc(var(--m)*-1);padding:0 var(--m) 8px!important;scrollbar-width:none;border-top:0!important}
+.quotes::-webkit-scrollbar{display:none}
+.quotes>blockquote{flex:0 0 82%;scroll-snap-align:start;border-top:1px solid rgba(0,0,0,.12);padding-top:24px!important;margin:0!important}
+/* title block */
+.mtw-grid{gap:24px!important}
+.kpis b{font-size:clamp(34px,11vw,48px)!important}
+/* all CTA groups: full width, 12px apart */
+.acts{flex-direction:column!important;gap:12px!important;align-items:stretch!important}
+.acts .btn{width:100%}
+}
+
+@media (max-width:700px){
+.acts .btn,.lookgrid .btn,.metodogrid .btn,.verano .btn{flex:0 0 auto!important;height:56px!important;min-height:0!important}
+.marcas li{height:104px!important}
+.marcas img{max-width:72%!important;max-height:44px!important}
+#metodo .head .fama{display:none}
+}
+
+/* brands · mobile bigger */
+@media (max-width:700px){.marcas li{height:112px!important}.marcas img{max-width:80%!important;max-height:52px!important}}
+
+/* menu open (all pages): nav stays white like the white panel — no black strip */
+html.menu-open body:not(:has(header.hero)) nav#nav,html.menu-open body nav#nav{background:#fff!important;color:#000!important;border-bottom:1px solid rgba(0,0,0,.12)!important}
+html.menu-open body:not(:has(header.hero)) nav#nav img,html.menu-open body nav#nav img{filter:invert(1)!important}
+html.menu-open body:not(:has(header.hero)) nav#nav a,html.menu-open body:not(:has(header.hero)) nav#nav button,html.menu-open body nav#nav .menubtn{color:#000!important}
+html.menu-open body:not(:has(header.hero)) nav#nav .mb-lines i,html.menu-open body nav#nav .mb-lines i{background:#000!important}
+
+/* Home KPIs · mobile: cifras dentro de su columna, sin línea suelta */
+@media (max-width:700px){
+.mtw .kpis b{font-size:clamp(26px,8.4vw,36px)!important;white-space:nowrap;letter-spacing:-.04em!important}
+.mtw .kpis>div{border:0!important;box-shadow:none!important;min-width:0}
+.mtw .kpis>div:nth-child(n+3){border-top:1px solid var(--line)!important}
+.mtw .kpis{border-bottom:0!important}
+}
 </style><script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"EducationalOrganization","@id":"https://famaacademy.es/#org","name":"FAMA Academy","alternateName":"FAMA Academy · Escuela de modelos","url":"https://famaacademy.es","logo":"https://famaacademy.es/wp-content/uploads/fama-academy-logo.png","description":"Escuela de modelos de alta gama en Madrid y Barcelona. Máster Modelo Profesional, intensivos de verano, Openday y cursos online.","foundingDate":"2011","telephone":"+34678210334","email":"hola@famaacademy.es","sameAs":["https://www.instagram.com/famaacademy","https://www.tiktok.com/@famaacademy","https://www.youtube.com/@famaacademy_escuelamodelos/","https://famamanagement.com/","https://famaspaces.es/","https://famaagency.es"],"address":[{"@type":"PostalAddress","streetAddress":"Calle Bormonia, 9","addressLocality":"Madrid","postalCode":"28037","addressCountry":"ES"},{"@type":"PostalAddress","streetAddress":"Carrer de Pau Claris, 79","addressLocality":"Barcelona","postalCode":"08010","addressCountry":"ES"}],"parentOrganization":{"@type":"Organization","name":"FAMA","url":"https://famaagency.es"}},{"@type":"WebSite","url":"https://famaacademy.es","name":"FAMA Academy","inLanguage":"es"}]}</script></head><body class="t-alt">
 <div class="curtain" id="curtain"><img src="../../assets/logo/svg/fama-academy-mark-white.svg" alt=""></div>
 <nav id="nav" data-cta="MasterMadrid.html#convocatorias" data-label="Solicitar plaza"></nav>
 
-<header class="hero"><video autoplay muted loop playsinline poster="https://famaacademy.es/wp-content/uploads/2026/08/FAMAACADEMY1.webp" src="https://talentifind-public-resources.s3.eu-west-1.amazonaws.com/academy/Campan%CC%83a_Septiembre_Ma%CC%81ster_de_Modelo_Horizontal___.mp4"></video><div class="cap"><span class="lbl">Campaña septiembre · Máster de Modelo</span><span class="lbl">Madrid · Barcelona</span></div></header>
-<div class="masthead band"><span class="lbl dim">Nº 01 · Otoño – Invierno 2026</span><img class="logo-w" src="../../assets/logo/svg/fama-academy-horizontal-white.svg" alt="FAMA Academy" style="height:18px"><span class="lbl dim">Escuela de modelos · Madrid · Barcelona</span></div>
+<header class="hero hero-photo"><img class="still" src="../../assets/photos/desfile-alumnos-fama-academy-agatha-ruiz-de-la-prada-madrid-2400.webp" srcset="../../assets/photos/desfile-alumnos-fama-academy-agatha-ruiz-de-la-prada-madrid-1200.webp 1200w, ../../assets/photos/desfile-alumnos-fama-academy-agatha-ruiz-de-la-prada-madrid-2400.webp 2400w" sizes="100vw" width="2400" height="3000" fetchpriority="high" alt="Alumnos de FAMA Academy desfilando para Agatha Ruiz de la Prada en la residencia de Shakira en Madrid"><figcaption class="cap cap-ed"><div class="ed"><span class="lbl ed-k">Desfile · Madrid</span><p class="ed-t">Agatha Ruiz de la Prada, en la residencia madrileña de Shakira</p><span class="ed-c">Sobre la pasarela, los alumnos de FAMA Academy</span></div><span class="lbl ed-r">Madrid · Barcelona</span></figcaption></header>
 
-<section class="title band">
-<span class="lbl dim vert r">Más de 15 años formando modelos</span>
-<div><h1 class="stmt r" style="font-size:clamp(32px,5vw,88px)"><b>Sé el modelo</b> que las marcas más exigentes demandan</h1>
-<div class="title-meta r"><p>Más de 15 años formando y acompañando modelos para que estén 100% preparados para trabajar en cualquier escenario.</p><div class="acts"><a class="btn solid" href="MasterMadrid.html#convocatorias">Solicitar plaza</a><a class="btn" href="Openday.html">Reservar Openday</a></div></div>
-<a class="rating r" href="https://www.google.com/maps/search/?api=1&query=Google&query_place_id=ChIJtSXZswsvQg0RgmtxKBz4RKY" target="_blank" rel="noopener" style="margin-top:32px"><span class="stars" aria-hidden="true">★★★★★</span><span><b>4,9</b> · 1.638 reseñas en Google</span></a>
-<div class="kpis r" style="margin-top:clamp(64px,8vw,120px)"><div><b data-fit="72">+15</b><span class="lbl dim">años formando modelos</span></div><div><b data-fit="72">+1.000</b><span class="lbl dim">alumnos formados</span></div><div><b data-fit="72">15</b><span class="lbl dim">alumnos por grupo</span></div><div><b data-fit="72">2</b><span class="lbl dim">sedes · Madrid y Barcelona</span></div></div></div>
+<section class="title twhite mtw">
+<span class="lbl dim r" style="display:block;margin-bottom:32px">Escuela de modelos · Madrid · Barcelona</span>
+<h1 class="stmt r" style="font-size:clamp(32px,5vw,88px);margin:0;max-width:20ch"><b>Sé el modelo</b> que las marcas más exigentes demandan</h1>
+<div class="mtw-grid">
+<div class="mtw-left r"><a class="rating" href="https://www.google.com/maps/search/?api=1&query=Google&query_place_id=ChIJtSXZswsvQg0RgmtxKBz4RKY" target="_blank" rel="noopener"><span class="stars" aria-hidden="true">★★★★★</span><span><b>4,9</b> · 1.638 reseñas en Google</span></a></div>
+<div class="mtw-right r"><p>Más de 15 años formando y acompañando modelos para que estén 100% preparados para trabajar en cualquier escenario.</p><div class="acts"><a class="btn solid" href="MasterMadrid.html#convocatorias">Solicitar plaza</a><a class="btn" href="Openday.html">Reservar Openday</a></div></div>
+</div>
+<div class="kpis r"><div><b>+15</b><span class="lbl dim">años formando modelos</span></div><div><b>+1.000</b><span class="lbl dim">alumnos formados</span></div><div><b>15</b><span class="lbl dim">alumnos por grupo</span></div><div><b>2</b><span class="lbl dim">sedes · Madrid y Barcelona</span></div></div>
 </section>
 
 <div class="ticker"><div><span><b>Openday</b> · Madrid · Barcelona</span><span>Máster Modelo Profesional</span><span><b>Intensivos de verano</b> · 2 semanas</span><span>Curso online de Casting · Curso online de Posado</span><span><b>Openday</b> · Madrid · Barcelona</span><span>Máster Modelo Profesional</span><span><b>Intensivos de verano</b> · 2 semanas</span><span>Curso online de Casting · Curso online de Posado</span></div></div>
 
-<section id="master" class="sec look pad band"><div class="head r"><span class="num">01</span><h2 class="syne h2 sy">Formación presencial</h2><span class="lbl dim">Madrid · Barcelona</span></div><div class="lookgrid"><div class="sticky r"><h3 class="syne big3" data-fit="150">Máster Modelo Profesional</h3><p class="light" style="margin:28px 0 0;max-width:30ch">Tres meses para convertirte en el modelo que las marcas buscan</p><p>Un innovador método pedagógico que fomenta la confianza, la actitud, la autoestima y desarrolla tus habilidades personales. Clases y prácticas con los mejores profesionales de la industria de la moda para ser el modelo que las marcas más exigentes anhelan.</p><div class="open"><span class="lbl dim">Convocatorias 2026 y 2027</span><ul><li><a href="MasterMadrid.html#convocatorias"><span>Madrid · Otoño 2026</span><span>Viernes, fines de semana y tardes entre semana</span><b>Últimas plazas</b></a></li><li><a href="MasterBarcelona.html#convocatorias"><span>Barcelona · Enero 2027</span><span>Viernes tarde, sábados mañana y tarde</span><b>Plazas disponibles</b></a></li><li><a href="IntensivoVerano.html#convocatorias"><span>Madrid · Intensivos verano 2027</span><span>Dos semanas en julio o agosto, de lunes a viernes</span><b>Plazas disponibles</b></a></li></ul></div>
+<section id="master" class="sec look pad"><div class="head r"><span class="num">01</span><h2 class="syne h2 sy">Formación presencial</h2><span class="lbl dim">Madrid · Barcelona</span></div><div class="lookgrid"><div class="sticky r"><h3 class="syne big3" data-fit="150">Máster Modelo Profesional</h3><p class="light" style="margin:28px 0 0;max-width:30ch">Tres meses para convertirte en el modelo que las marcas buscan</p><p>Un innovador método pedagógico que fomenta la confianza, la actitud, la autoestima y desarrolla tus habilidades personales. Clases y prácticas con los mejores profesionales de la industria de la moda para ser el modelo que las marcas más exigentes anhelan.</p><div class="open"><span class="lbl dim">Convocatorias 2026 y 2027</span><ul><li><a href="MasterMadrid.html#convocatorias"><span>Madrid · Otoño 2026</span><span>Viernes, fines de semana y tardes entre semana</span><b>Últimas plazas</b></a></li><li><a href="MasterBarcelona.html#convocatorias"><span>Barcelona · Enero 2027</span><span>Viernes tarde, sábados mañana y tarde</span><b>Plazas disponibles</b></a></li><li><a href="IntensivoVerano.html#convocatorias"><span>Madrid · Intensivos verano 2027</span><span>Dos semanas en julio o agosto, de lunes a viernes</span><b>Plazas disponibles</b></a></li></ul></div>
 <div class="acts"><a class="btn solid" href="MasterMadrid.html" title="Escuela de modelos en Madrid">+ Madrid</a><a class="btn" href="MasterBarcelona.html" title="Escuela de modelos en Barcelona">+ Barcelona</a></div></div>
 <div class="col"><div class="pic r"><img src="https://famaacademy.es/wp-content/uploads/2026/08/MON_4990-1-scaled-1-1024x683.webp" alt="Máster Modelo Profesional"></div><div class="pic off r"><img src="https://famaacademy.es/wp-content/uploads/2024/11/home-modelo-fama-alba-fama-academy.webp" alt="FAMA Academy, escuela de modelos de alta gama en Madrid y Barcelona"></div></div></div></section>
 
@@ -234,11 +323,11 @@ section.look,section.metodo{display:block}
 <blockquote class="r"><p>“Todo lo que aprendí en FAMA me ha ayudado a firmar contratos con agencias y clientes importantes.”</p><cite class="lbl"><span>Ana T.</span><span>Alumna</span><span>19/07/2026</span></cite></blockquote>
 </div></section>
 
-<section class="sec marcas pad band"><div class="head r"><span class="num">05</span><h2 class="syne h2 sy">Han confiado</h2><span class="lbl dim">Marcas y medios</span></div><ul class="r">
+<section class="sec marcas pad"><div class="head r"><span class="num">05</span><h2 class="syne h2 sy">Han confiado</h2><span class="lbl dim">Marcas y medios</span></div><ul class="r">
 <li><img src="https://famaacademy.es/wp-content/uploads/2024/10/chanel.webp" alt="Chanel"></li><li><img src="https://famaacademy.es/wp-content/uploads/2024/10/dior.webp" alt="Dior"></li><li><img src="https://famaacademy.es/wp-content/uploads/2024/10/ch.webp" alt="CH"></li><li><img src="https://famaacademy.es/wp-content/uploads/2024/10/mercedes.webp" alt="Mercedes"></li><li><img src="https://famaacademy.es/wp-content/uploads/2024/10/mugler.webp" alt="Mugler"></li><li><img src="https://famaacademy.es/wp-content/uploads/2024/10/marie-claire.webp" alt="Marie Claire"></li><li><img src="https://famaacademy.es/wp-content/uploads/2024/10/women.webp" alt="Women"></li><li><img src="https://famaacademy.es/wp-content/uploads/2024/10/cortefiel.webp" alt="Cortefiel"></li><li><img src="https://famaacademy.es/wp-content/uploads/2024/10/vogue.webp" alt="Vogue"></li><li><img src="https://famaacademy.es/wp-content/uploads/2024/10/netflix.webp" alt="Netflix"></li>
 </ul></section>
 
-<section id="verano" class="sec pad verano"><div class="head r"><span class="num">06</span><h2 class="syne h2">Intensivos de verano y online</h2><span class="lbl dim">Julio · Agosto 2027 · Madrid</span></div><div class="date">
+<section id="verano" class="sec pad verano"><div class="head r"><span class="num">06</span><h2 class="h2 hsg">Intensivos de verano y online</h2><span class="lbl dim">Julio · Agosto 2027 · Madrid</span></div><div class="date">
 <div class="giant r" data-fit="300">Verano 2027</div>
 <div class="row"><div class="r"><p class="light" style="margin:0">El Máster Modelo Profesional en dos semanas intensivas</p><p style="margin-top:32px">Nuestro Máster de Modelo Profesional pero en formato intensivo de verano. Logra convertirte en modelo profesional para trabajar con las marcas más exigentes en tan sólo 2 semanas, eso sí, de manera intensiva.</p><a class="btn solid" href="IntensivoVerano.html" style="margin-top:40px">Más información</a></div><div class="pic r" style="filter:none"><img src="https://famaacademy.es/wp-content/uploads/2026/08/curso-verano-modelo-683x1024.webp" alt="Intensivos de verano 2027"></div></div>
 </div>
